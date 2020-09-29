@@ -70,18 +70,14 @@ function openProject(target) {
 
   $(".single-item").slick("slickGoTo", 1, true)
 
-  // setTimeout(function () {
-  //   $(".single-item").slick("slickGoTo", 1, true)
-  // }, 100)
-
   setTimeout(function () {
     openPreviewOverlay()
     previewOverlay.scrollTop = 0
-  }, 200)
+  }, 100)
 
   setTimeout(function () {
     opSlider.querySelector(".slick-prev").click()
-  }, 400)
+  }, 500)
 }
 
 function injectProject(code) {
