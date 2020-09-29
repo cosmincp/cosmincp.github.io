@@ -68,19 +68,19 @@ function openProject(target) {
   injectProjectSlides(target)
   injectProject(target)
 
-  // $(".single-item").slick("slickGoTo", 0, true)
+  $(".single-item").slick("slickGoTo", 1, true)
 
-  setTimeout(function () {
-    $(".single-item").slick("slickGoTo", 0, true)
-  }, 150)
+  // setTimeout(function () {
+  //   $(".single-item").slick("slickGoTo", 1, true)
+  // }, 100)
 
   setTimeout(function () {
     // opSlider.querySelector(".slick-next").click()
-    // opSlider.querySelector(".slick-prev").click()
+    opSlider.querySelector(".slick-prev").click()
 
     openPreviewOverlay()
     previewOverlay.scrollTop = 0
-  }, 300)
+  }, 200)
 }
 
 function injectProject(code) {
