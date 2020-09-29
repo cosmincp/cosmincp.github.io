@@ -1,0 +1,237 @@
+$height-left-side-btns: 10rem;
+$height-right-side-btns: 5rem;
+
+.side-btns {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  &--left {
+    left: 4vw;
+
+    &::before,
+    &::after {
+      left: 0;
+      height: calc(50vh - 4vw - #{$height-left-side-btns});
+    }
+  }
+
+  &--right {
+    right: 4vw;
+
+    &::before,
+    &::after {
+      right: 0;
+      height: calc(50vh - 4vw - #{$height-right-side-btns});
+    }
+  }
+
+  &--left::before,
+  &--left::after,
+  &--right::before,
+  &--right::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    background: var(--color-lines);
+
+    z-index: 100;
+  }
+
+  &--left::before,
+  &--right::before {
+    top: 4vw;
+  }
+
+  &--left::after,
+  &--right::after {
+    bottom: 4vw;
+  }
+
+  &--left &__container,
+  &--right &__container {
+    z-index: 1;
+  }
+
+  &--left &__container {
+    padding: 1.5rem;
+    margin-left: -2.5rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 0;
+
+      pointer-events: none;
+      transition: $transition-2;
+      background: linear-gradient(to right, var(--color-bg), transparent);
+      z-index: -1;
+    }
+  }
+
+  &--left &__container:hover {
+    &::after {
+      width: 30rem;
+    }
+  }
+
+  &--right &__container {
+    padding: 0 1.5rem;
+    margin-right: -2.25rem;
+  }
+
+  &__list {
+    font-family: $font-mono-1;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    font-size: 1rem;
+    line-height: 1;
+    margin: 1rem auto;
+    color: lighten($color-dark, 40%);
+
+    cursor: pointer;
+
+    &:hover {
+      border-color: var(--color-lines);
+    }
+  }
+
+  &--left .side-btns__item--active .dot {
+    background: var(--color-text);
+    color: var(--color-bg);
+  }
+
+  &__item a {
+    color: inherit;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__item .dot {
+    flex: 0 0 2rem;
+    width: 2rem;
+    height: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    border: 1px solid transparent;
+
+    transition: $transition-5;
+  }
+
+  &__item--section .label {
+    position: absolute;
+    left: 5rem;
+    padding: 0.5rem 1rem;
+
+    color: var(--color-bg-2);
+    background: var(--color-text);
+
+    transition: $transition-5;
+    opacity: 0;
+  }
+
+  &__item--section .label::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -2rem;
+    height: 1px;
+    width: 2rem;
+    background: var(--color-lines);
+  }
+
+  &__item--section .label,
+  &__item--section .label::before {
+    pointer-events: none;
+  }
+
+  &:hover &__item--section .dot {
+    border-color: var(--color-discrete-1);
+  }
+
+  &:hover &__item--section .label {
+    opacity: 1;
+    transform: translateX(0.5rem);
+  }
+
+  &__list--sections &__item--active::before,
+  &__list--themes &__item--active::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+
+    width: 50vw;
+    height: 1px;
+    background: var(--color-lines);
+
+    transition: 0.5s;
+  }
+
+  &__list--sections &__item--active::before {
+    left: calc(-50vw - 1.5rem);
+  }
+
+  &__list--themes &__item--active::before {
+    right: calc(-50vw - 1.5rem);
+  }
+
+  &__list--themes {
+    opacity: 0.9;
+  }
+
+  &__list--themes &__item {
+    border-color: #e6e6e6;
+
+    margin: 2rem auto;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+  }
+
+  &__list--themes &__item--theme-1 {
+    background: linear-gradient(
+      90deg,
+      lighten($color-light, 0%) 0%,
+      lighten($color-light, 0%) 50%,
+      darken($color-light, 5%) 50%,
+      darken($color-light, 5%) 100%
+    );
+  }
+
+  &__list--themes &__item--theme-2 {
+    background: linear-gradient(
+      90deg,
+      lighten($color-dark, 15%) 0%,
+      lighten($color-dark, 15%) 50%,
+      darken($color-dark, 0%) 50%,
+      darken($color-dark, 0%) 100%
+    );
+  }
+
+  &__list--themes &__item--theme-3 {
+    background: linear-gradient(
+      90deg,
+      #f1b259 0%,
+      #f1b259 50%,
+      #645b88 50%,
+      #645b88 100%
+    );
+  }
+}

@@ -1,0 +1,102 @@
+:root {
+  // B/W Solid
+  --color-white: hsl(0, 0%, 100%);
+  --color-light-l3: hsl(0, 0%, 98%);
+  --color-light-l2: hsl(0, 0%, 96%);
+  --color-light-l1: hsl(0, 0%, 94%);
+  --color-light: hsl(0, 0%, 90%);
+  --color-light-d1: hsl(0, 0%, 85%);
+  --color-light-d2: hsl(0, 0%, 80%);
+  --color-light-d3: hsl(0, 0%, 75%);
+  --color-light-d4: hsl(0, 0%, 70%);
+  --color-light-d5: hsl(0, 0%, 65%);
+
+  --color-bw-l1: hsl(0, 0%, 55%);
+  --color-bw: hsl(0, 0%, 50%);
+  --color-bw-d1: hsl(0, 0%, 45%);
+
+  --color-dark-l5: hsl(0, 0%, 35%);
+  --color-dark-l4: hsl(0, 0%, 32%);
+  --color-dark-l3: hsl(0, 0%, 29%);
+  --color-dark-l2: hsl(0, 0%, 26%);
+  --color-dark-l1: hsl(0, 0%, 23%);
+  --color-dark: hsl(0, 0%, 20%);
+  --color-dark-d1: hsl(0, 0%, 18%);
+  --color-dark-d2: hsl(0, 0%, 16%);
+  --color-dark-d3: hsl(0, 0%, 14%);
+  --color-black: hsl(0, 0%, 0%);
+
+  // B/W Transparent
+  --color-discrete-l1: hsla(0, 0%, 100%, 0.25);
+  --color-silent-l1: hsla(0, 0%, 100%, 0.2);
+  --color-silent-l2: hsla(0, 0%, 100%, 0.15);
+  --color-silent-l3: hsla(0, 0%, 100%, 0.1);
+  --color-silent-d1: hsla(0, 0%, 0%, 0.2);
+  --color-silent-d2: hsla(0, 0%, 0%, 0.15);
+  --color-silent-d3: hsla(0, 0%, 0%, 0.1);
+  --color-stealth-l1: hsla(0, 0%, 100%, 0.1);
+  --color-stealth-l2: hsla(0, 0%, 100%, 0.07);
+  --color-stealth-l3: hsla(0, 0%, 100%, 0.05);
+  --color-stealth-d1: hsla(0, 0%, 0%, 0.1);
+  --color-stealth-d2: hsla(0, 0%, 0%, 0.07);
+  --color-stealth-d3: hsla(0, 0%, 0%, 0.05);
+}
+
+body.theme--bw-light {
+  --color-bg: var(--color-white);
+  --color-bg-2: var(--color-light-l1);
+  --color-reverse: var(--color-dark-l1);
+
+  --color-text: var(--color-dark);
+  --color-text-primary: var(--color-dark-d2);
+  --color-text-secondary: var(--color-dark-l3);
+  --color-text-tertiary: var(--color-dark-l5);
+
+  --color-text-calm: var(--color-dark-d2);
+
+  --color-strongest: var(--color-dark-d3);
+  --color-stronger: var(--color-dark);
+  --color-strong: var(--color-dark);
+  --color-weak: var(--color-dark);
+  --color-weaker: var(--color-dark);
+  --color-weakest: var(--color-dark);
+
+  --color-text-silent-1: var(--color-silent-d3);
+
+  --color-discrete-1: var(--color-discrete-d1);
+  --color-silent-1: var(--color-silent-d1);
+  --color-silent-2: var(--color-silent-d2);
+  --color-stealth-2: var(--color-stealth-d2);
+  --color-stealth-3: var(--color-stealth-d3);
+
+  --color-lines: var(--color-light);
+}
+
+body.theme--bw-dark {
+  --color-bg: var(--color-dark-d1);
+  --color-bg-2: var(--color-dark-l1);
+  --color-reverse: var(--color-bw);
+
+  --color-strongest: var(--color-white);
+  --color-stronger: var(--color-white);
+  --color-strong: var(--color-white);
+  --color-weak: var(--color-white);
+  --color-weaker: var(--color-light-d3);
+  --color-weakest: var(--color-white);
+
+  --color-text: var(--color-light);
+  --color-text-primary: var(--color-white);
+  --color-text-secondary: var(--color-light-d3);
+  --color-text-tertiary: var(--color-light-d5);
+
+  --color-text-calm: var(--color-light-d2);
+  --color-text-silent-1: var(--color-silent-l1);
+
+  --color-discrete-1: var(--color-discrete-l1);
+  --color-silent-1: var(--color-silent-l1);
+  --color-silent-2: var(--color-silent-l2);
+  --color-stealth-2: var(--color-stealth-l2);
+  --color-stealth-3: var(--color-stealth-l3);
+
+  --color-lines: var(--color-dark-l3);
+}

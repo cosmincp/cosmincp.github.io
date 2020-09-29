@@ -1,0 +1,32 @@
+.btn {
+  display: inline-block;
+  font-size: 1.125rem;
+  line-height: 1;
+  font-weight: 500;
+  padding: 0.625em 1.375em;
+  margin-right: 0.5em;
+
+  border: 2px solid var(--color-text);
+  border-radius: 3px;
+
+  transition: $transition-2;
+  cursor: pointer;
+  color: inherit;
+
+  &--outlined {
+    background: transparent;
+  }
+
+  &--filled {
+    background: var(--color-text);
+    color: var(--color-bg);
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+  }
+}

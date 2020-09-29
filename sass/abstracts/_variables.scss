@@ -1,0 +1,50 @@
+/* VARIABLES */
+
+// Sizes: Material
+$size-navbar: 3.5rem;
+$size-navbar-bottom: 3.5rem;
+
+// Breakpoints: Bootstrap 4
+$bp-min-sm: 576px;
+$bp-min-md: 768px;
+$bp-min-lg: 992px;
+$bp-min-xl: 1200px;
+
+$bp-max-xs: 575.98px;
+$bp-max-sm: 767.98px;
+$bp-max-md: 991.98px;
+$bp-max-lg: 1199.98px;
+
+// Z-index: Bootstrap 4
+$zindex-dropdown: 1000;
+$zindex-sticky: 1020;
+$zindex-fixed: 1030;
+$zindex-modal-backdrop: 1040;
+$zindex-modal: 1050;
+$zindex-popover: 1060;
+$zindex-tooltip: 1070;
+
+// Fonts
+$font-sans-1: "Roboto", Helvetica, Arial, sans-serif;
+$font-sans-2: "Roboto Condensed", Helvetica, Arial, sans-serif;
+$font-mono-1: "Roboto Mono", monospace;
+
+// Colors
+$color-white: #ffffff;
+$color-light: #f9f9f9;
+
+$color-dark: #333333;
+$color-dark-l5: #444;
+
+$color-black: #000000;
+
+$color-url: #5893ff;
+$color-input-outline: #333;
+
+// Transitions
+$transition-1: 0.1s;
+$transition-2: 0.2s;
+$transition-3: 0.25s;
+$transition-4: 0.375s;
+$transition-5: 0.5s;
+$transition-6: 0.625s;

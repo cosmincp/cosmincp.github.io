@@ -1,0 +1,104 @@
+.zone-intro {
+  @media (min-width: $bp-min-sm) and (min-height: 768px) {
+    // height: 100vh;
+  }
+
+  .container,
+  .row {
+    height: 100%;
+  }
+
+  .col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .zone__title,
+  .zone__title > span:first-child,
+  .zone__title > span:last-child {
+    color: var(--color-silent-2);
+  }
+
+  &__greetings {
+    margin: 2rem 0 3rem;
+    position: relative;
+    align-self: flex-start;
+
+    font-family: $font-mono-1;
+    font-size: 2.5rem;
+    font-weight: 300;
+
+    // padding-right: 0.25rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background: var(--color-bg); // change to default bg color
+      border-left: 4px solid transparent;
+
+      animation: typing 1s steps(12) forwards, cursor 1s infinite; // steps(n), where 'n' is the number of monospaced characters
+    }
+
+    @keyframes typing {
+      from {
+        width: 100%;
+      }
+      to {
+        width: 0;
+      }
+    }
+    @keyframes cursor {
+      50% {
+        border-color: var(--color-text);
+      }
+    }
+  }
+
+  &__my {
+    font-size: 1.25rem;
+  }
+
+  &__name {
+    font-size: 3.375rem;
+    font-weight: 700;
+    line-height: 1;
+    margin: 1.25rem 0;
+    letter-spacing: 2px;
+  }
+
+  &__description {
+    font-size: 1.375rem;
+  }
+
+  &__cta {
+    margin: 3rem 0;
+  }
+
+  &__hero {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
+    .text {
+      margin-top: 6rem;
+      font-size: 9rem;
+      font-weight: 600;
+      font-family: $font-mono-1;
+      color: var(--color-stealth-2);
+    }
+
+    .brand img {
+      display: block;
+      width: 19rem;
+      margin-top: 8rem;
+      margin-right: 4rem;
+      opacity: 0.2;
+    }
+  }
+}

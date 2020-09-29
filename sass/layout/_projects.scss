@@ -1,0 +1,220 @@
+.project {
+  position: relative;
+  display: flex;
+  cursor: default;
+
+  &__img,
+  &__details {
+    flex: 0 0 50%;
+  }
+
+  &__img img,
+  &__tags,
+  &__title,
+  &__date {
+    transition: $transition-5;
+  }
+
+  &__img {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__img img {
+    display: block;
+
+    object-fit: cover;
+    object-position: 50% 0;
+    height: 18rem;
+    width: 100%;
+
+    border: 1px solid var(--color-lines);
+
+    backface-visibility: hidden;
+  }
+
+  &:hover &__img img {
+    filter: grayscale(0) contrast(1) brightness(0.99);
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__tags li {
+    margin-right: 1.5rem;
+    padding-bottom: 1rem;
+
+    font-size: 0.9rem;
+    line-height: 1;
+    font-family: $font-mono-1;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__details > * {
+    padding: 0 4rem;
+  }
+
+  &__date {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+  }
+
+  &__title {
+    font-size: 1.375rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  &__desc {
+    margin: 1rem 0 2rem;
+    color: var(--color-text-secondary);
+  }
+}
+
+body.theme--bw-light {
+  .project__img img {
+    filter: grayscale(1) contrast(0.95) brightness(0.97);
+  }
+}
+
+body.theme--bw-dark {
+  .project__img img {
+    filter: grayscale(1) contrast(0.95) brightness(0.85);
+  }
+}
+
+.projects {
+  display: grid;
+  grid-auto-rows: min-content;
+
+  &--featured {
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+  }
+
+  &--others {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+
+  &--featured,
+  &--others {
+    margin-bottom: 6rem;
+  }
+
+  &--ux {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+  }
+}
+
+.projects--featured .project {
+  flex-direction: row;
+
+  &__img {
+    align-self: flex-start;
+  }
+
+  &__details {
+    padding: 2rem 0rem 3rem;
+  }
+}
+
+.projects--others .project,
+.projects--ux .project {
+  overflow: hidden;
+
+  &--widowed {
+    grid-column: span 2;
+    width: calc(50% - 0.5rem);
+    margin: 0 auto;
+  }
+
+  &__img {
+    flex: 0 0 100%;
+  }
+
+  &__details {
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
+    padding: 3rem 0 1.5rem;
+
+    color: $color-white;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      rgba($color-black, 0.5)
+    );
+    transition: $transition-5;
+
+    transform: translateY(0.125rem);
+    opacity: 0;
+    // opacity: 1;
+  }
+
+  &__details,
+  &__details > * {
+    cursor: pointer;
+  }
+
+  &__details > * {
+    text-shadow: 0 0 0.5rem rgba($color-black, 0.33);
+  }
+
+  &__title {
+    color: var(--color-white);
+  }
+
+  &__btn {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 1.25rem;
+
+    padding: 0.625rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: $transition-5;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  &__btn svg {
+    display: block;
+    fill: $color-white;
+    width: 1.75rem;
+  }
+
+  &:hover .project__details {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.projects--others .project {
+  &__date,
+  &__title {
+    padding: 0 2.25rem;
+  }
+}
+
+.projects--ux .project {
+  &__date,
+  &__title {
+    padding: 0 2rem;
+  }
+}
