@@ -2,9 +2,9 @@
 ////////////////////////////////////////
 // Select DOM elements
 
-const projectsListFeatured = document.querySelector("#js-projectsFeatured");
-const projectsListOthers = document.querySelector("#js-projectsOthers");
-const projectsListUx = document.querySelector("#js-projectsUx");
+const projectsListFeatured = document.querySelector("#js-projectsFeatured")
+const projectsListOthers = document.querySelector("#js-projectsOthers")
+const projectsListUx = document.querySelector("#js-projectsUx")
 
 ////////////////////////////////////////
 ////////////////////////////////////////
@@ -24,34 +24,34 @@ const projectsIcons = {
           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
           </svg>
           `,
-};
+}
 
 ////////////////////////////////////////
 ////////////////////////////////////////
 // Inject projects: Featured
 
 function injectProjectsFeatured() {
-  let i;
+  let i
 
   for (let i = Projects.featured.length - 1; i > -1; i--) {
-    let prj = document.createElement("div");
-    prj.classList.add("project");
-    prj.setAttribute("data-prj-index", i);
-    prj.setAttribute("data-prj-type", Projects.featured[i].type);
-    prj.setAttribute("data-prj-code", Projects.featured[i].code);
+    let prj = document.createElement("div")
+    prj.classList.add("project")
+    prj.setAttribute("data-prj-index", i)
+    prj.setAttribute("data-prj-type", Projects.featured[i].type)
+    prj.setAttribute("data-prj-code", Projects.featured[i].code)
 
-    let prjTags = document.createElement("ul");
-    prjTags.classList.add("project__tags");
+    let prjTags = document.createElement("ul")
+    prjTags.classList.add("project__tags")
 
     for (let j = 0; j < Projects.featured[i].tags.length; j++) {
-      let tag = document.createElement("li");
-      tag.innerHTML = Projects.featured[i].tags[j];
-      prjTags.appendChild(tag);
+      let tag = document.createElement("li")
+      tag.innerHTML = Projects.featured[i].tags[j]
+      prjTags.appendChild(tag)
     }
 
     prj.innerHTML = `
       <div class="project__img">
-        <img src="${Projects.featured[i].thumbnail}" alt="" />
+        <img src="${Projects.featured[i].thumbnail}" alt="project image" />
       </div>
 
       <div class="project__details">
@@ -60,31 +60,31 @@ function injectProjectsFeatured() {
         <div class="project__desc">${Projects.featured[i].descShort}</div>
         <ul class="project__tags">${prjTags.innerHTML}</ul>
       </div>
-    `;
+    `
 
-    projectsListFeatured.appendChild(prj);
+    projectsListFeatured.appendChild(prj)
   }
 }
 
-injectProjectsFeatured();
+injectProjectsFeatured()
 
 ////////////////////////////////////////
 ////////////////////////////////////////
 // Inject projects: Others
 
 function injectProjectsOthers() {
-  let i;
+  let i
 
   for (let i = Projects.others.length - 1; i > -1; i--) {
-    let prj = document.createElement("div");
-    prj.classList.add("project");
-    prj.setAttribute("data-prj-index", i);
-    prj.setAttribute("data-prj-type", Projects.others[i].type);
-    prj.setAttribute("data-prj-code", Projects.others[i].code);
+    let prj = document.createElement("div")
+    prj.classList.add("project")
+    prj.setAttribute("data-prj-index", i)
+    prj.setAttribute("data-prj-type", Projects.others[i].type)
+    prj.setAttribute("data-prj-code", Projects.others[i].code)
 
     // Make project span 2 columns if widowed
     if (i == 0 && Projects.others.length % 2 != 0) {
-      prj.classList.add("project--widowed");
+      prj.classList.add("project--widowed")
     }
 
     prj.innerHTML = `
@@ -96,13 +96,13 @@ function injectProjectsOthers() {
         <div class="project__title">${Projects.others[i].name}</div>
         <div class="project__btn">${projectsIcons.info1}</div>
       </div>
-    `;
+    `
 
-    projectsListOthers.appendChild(prj);
+    projectsListOthers.appendChild(prj)
   }
 }
 
-injectProjectsOthers();
+injectProjectsOthers()
 
 ////////////////////////////////////////
 ////////////////////////////////////////
@@ -110,11 +110,11 @@ injectProjectsOthers();
 
 function injectProjectsUx() {
   for (let i = Projects.ux.length - 1; i > -1; i--) {
-    let prj = document.createElement("div");
-    prj.classList.add("project");
-    prj.setAttribute("data-prj-index", i);
-    prj.setAttribute("data-prj-type", Projects.ux[i].type);
-    prj.setAttribute("data-prj-code", Projects.ux[i].code);
+    let prj = document.createElement("div")
+    prj.classList.add("project")
+    prj.setAttribute("data-prj-index", i)
+    prj.setAttribute("data-prj-type", Projects.ux[i].type)
+    prj.setAttribute("data-prj-code", Projects.ux[i].code)
 
     // Make project span 2 columns if widowed
     // if (i == 0 && Projects.others.length % 2 != 0) {
@@ -131,10 +131,10 @@ function injectProjectsUx() {
         <div class="project__title">${Projects.ux[i].name}</div>
         <div class="project__btn">${projectsIcons.info1}</div>
       </div>
-    `;
+    `
 
-    projectsListUx.appendChild(prj);
+    projectsListUx.appendChild(prj)
   }
 }
 
-injectProjectsUx();
+injectProjectsUx()
