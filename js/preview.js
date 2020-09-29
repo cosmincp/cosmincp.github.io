@@ -72,7 +72,7 @@ function openProject(target) {
 
   setTimeout(function () {
     $(".single-item").slick("slickGoTo", 0, true)
-  }, 100)
+  }, 200)
 
   setTimeout(function () {
     // opSlider.querySelector(".slick-next").click()
@@ -80,7 +80,7 @@ function openProject(target) {
 
     openPreviewOverlay()
     previewOverlay.scrollTop = 0
-  }, 100)
+  }, 200)
 }
 
 function injectProject(code) {
