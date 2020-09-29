@@ -68,11 +68,11 @@ function openProject(target) {
   injectProjectSlides(target)
   injectProject(target)
 
-  $(".single-item").slick("slickGoTo", 0, true)
+  // $(".single-item").slick("slickGoTo", 0, true)
 
   setTimeout(function () {
     $(".single-item").slick("slickGoTo", 0, true)
-  }, 200)
+  }, 150)
 
   setTimeout(function () {
     // opSlider.querySelector(".slick-next").click()
@@ -80,7 +80,7 @@ function openProject(target) {
 
     openPreviewOverlay()
     previewOverlay.scrollTop = 0
-  }, 200)
+  }, 300)
 }
 
 function injectProject(code) {
