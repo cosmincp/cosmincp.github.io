@@ -74,15 +74,14 @@ function openProject(target) {
   //   $(".single-item").slick("slickGoTo", 1, true)
   // }, 100)
 
-  opSlider.querySelector(".slick-prev").click()
+  setTimeout(function () {
+    openPreviewOverlay()
+    previewOverlay.scrollTop = 0
+  }, 200)
 
-  openPreviewOverlay()
-  previewOverlay.scrollTop = 0
-
-  // setTimeout(function () {
-  //   // opSlider.querySelector(".slick-next").click()
-
-  // }, 200)
+  setTimeout(function () {
+    opSlider.querySelector(".slick-prev").click()
+  }, 400)
 }
 
 function injectProject(code) {
