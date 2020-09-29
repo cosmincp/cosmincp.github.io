@@ -31,7 +31,7 @@ const Projects = {
       lang: ["HTML, CSS/Sass, JavaScript"],
       tech: ["Bootstrap 4", "Chart.js", "Leaflet"],
 
-      thumbnail: "img/projects/_thumbnails/xdb-1000.jpg",
+      thumbnail: "img/projects/thumbnails/xdb-1000.jpg",
       gallery: [
         "img/projects/xdb/d01.jpg",
         "img/projects/xdb/d02.jpg",
@@ -74,7 +74,7 @@ const Projects = {
       lang: ["HTML, CSS/Sass, JavaScript"],
       tech: ["Bootstrap 4", "Chart.js", "REST API"],
 
-      thumbnail: "img/projects/_thumbnails/xmd-1000.jpg",
+      thumbnail: "img/projects/thumbnails/xmd-1000.jpg",
       gallery: [
         "img/projects/xmd/d01.jpg",
         "img/projects/xmd/d02.jpg",
@@ -110,7 +110,7 @@ const Projects = {
       lang: ["HTML", "CSS", "JavaScript"],
       tech: ["Bootstrap 2"],
 
-      thumbnail: "img/projects/_thumbnails/xco-1000.jpg",
+      thumbnail: "img/projects/thumbnails/xco-1000.jpg",
       gallery: [
         "img/projects/xco/d01.jpg",
         "img/projects/xco/d02.jpg",
@@ -139,7 +139,7 @@ const Projects = {
       lang: ["HTML", "CSS", "JavaScript"],
       tech: ["Bootstrap 2"],
 
-      thumbnail: "img/projects/_thumbnails/1as-1000.jpg",
+      thumbnail: "img/projects/thumbnails/1as-1000.jpg",
       gallery: [
         "img/projects/1as/d01.jpg",
         "img/projects/1as/d02.jpg",
@@ -170,7 +170,7 @@ const Projects = {
       lang: ["HTML", "CSS/Sass", "JavaScript"],
       tech: ["Bootstrap 4", "Wordpress"],
 
-      thumbnail: "img/projects/_thumbnails/asm-1000.jpg",
+      thumbnail: "img/projects/thumbnails/asm-1000.jpg",
       gallery: [
         "img/projects/asm/d01.jpg",
         "img/projects/asm/d02.jpg",
@@ -203,7 +203,7 @@ const Projects = {
       tags: ["Figma"],
       tech: ["Figma"],
 
-      thumbnail: "img/projects-ux/_thumbnails/snb-1000.jpg",
+      thumbnail: "img/projects-ux/thumbnails/snb-1000.jpg",
       gallery: ["img/projects-ux/snb/d01.jpg", "img/projects-ux/snb/d02.jpg"],
     },
   ],
