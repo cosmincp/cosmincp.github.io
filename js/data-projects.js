@@ -46,7 +46,7 @@ const Projects = {
       date: "June 2020",
       type: "featured",
       categories: "",
-      links: [["xprimm.md", "http://xprimm.md/demo/"]],
+      links: [["xprimm.md", "http://xprimm.md/"]],
 
       descShort: `News website focused on Moldovan insurance market. Weather and currency APIs included.`,
       descLong: `
