@@ -9,15 +9,12 @@ const Projects = {
       type: "featured",
       categories: ["front-end", "ux"],
       links: [
-        ["demo: xprimm.com/database", "https://www.xprimm.com/database/"],
-        ["demo: .../home", "https://www.xprimm.com/database/home.php"],
-        [
-          "demo: .../my-account",
-          "https://www.xprimm.com/database/my-account.php",
-        ],
-        ["demo: .../country", "https://www.xprimm.com/database/country.php"],
-        ["demo: .../overview", "https://www.xprimm.com/database/overview.php"],
-        ["demo: .../visuals", "https://www.xprimm.com/database/visuals.php"],
+        ["demo: xprimm.com/demo", "https://www.xprimm.com/demo/"],
+        ["demo: .../home", "https://www.xprimm.com/demo/home.php"],
+        ["demo: .../my-account", "https://www.xprimm.com/demo/my-account.php"],
+        ["demo: .../country", "https://www.xprimm.com/demo/country.php"],
+        ["demo: .../overview", "https://www.xprimm.com/demo/overview.php"],
+        ["demo: .../visuals", "https://www.xprimm.com/demo/visuals.php"],
       ],
 
       descShort: `Spreadsheets and magazines database, containing downloadable content, interactive charts and maps.`,
@@ -49,12 +46,7 @@ const Projects = {
       date: "June 2020",
       type: "featured",
       categories: "",
-      links: [
-        ["demo: xprimm.md/demo", "http://xprimm.md/demo/"],
-        [".../articol.php", "http://xprimm.md/demo/articol.php"],
-        [".../evenimente.php", "http://xprimm.md/demo/evenimente.php"],
-        [".../statistici.php", "http://xprimm.md/demo/statistici.php"],
-      ],
+      links: [["xprimm.md", "http://xprimm.md/demo/"]],
 
       descShort: `News website focused on Moldovan insurance market. Weather and currency APIs included.`,
       descLong: `
