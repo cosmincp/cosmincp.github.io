@@ -8,14 +8,7 @@ const Projects = {
       date: "April 2020",
       type: "featured",
       categories: ["front-end", "ux"],
-      links: [
-        ["demo: xprimm.com/demo", "https://www.xprimm.com/demo/"],
-        ["demo: .../home", "https://www.xprimm.com/demo/home.php"],
-        ["demo: .../my-account", "https://www.xprimm.com/demo/my-account.php"],
-        ["demo: .../country", "https://www.xprimm.com/demo/country.php"],
-        ["demo: .../overview", "https://www.xprimm.com/demo/overview.php"],
-        ["demo: .../visuals", "https://www.xprimm.com/demo/visuals.php"],
-      ],
+      links: [["xprimm.com/database", "https://www.xprimm.com/database/"]],
 
       descShort: `Spreadsheets and magazines database, containing downloadable content, interactive charts and maps.`,
       descLong: `
