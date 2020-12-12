@@ -4,6 +4,9 @@
 // Themes
 @import "themes/themes";
 
+// Vendors (overwrites)
+@import "vendors/bootstrap";
+
 // Base
 @import "base/global";
 @import "base/typography";
@@ -18,10 +21,10 @@
 @import "layout/projects";
 @import "layout/scroll";
 @import "layout/sections";
+@import "layout/skills";
 
 // Components
 @import "components/buttons";
 @import "components/opened-project";
 @import "components/side-btns";
 @import "components/slick-carousel";
-@import "components/skills";

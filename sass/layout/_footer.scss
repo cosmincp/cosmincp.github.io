@@ -13,13 +13,13 @@
   }
 
   &__resources-text {
+    margin-bottom: 1rem;
     font-weight: 300;
   }
 
   &__resources-list {
     display: flex;
     justify-content: center;
-    margin-bottom: 2rem;
   }
 
   &__resources-item {
@@ -43,6 +43,7 @@
   }
 
   &__copyright {
+    margin-top: 2rem;
     font-weight: 300;
   }
 }

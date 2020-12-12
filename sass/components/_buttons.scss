@@ -1,10 +1,12 @@
 .btn {
   display: inline-block;
-  font-size: 1.125rem;
-  line-height: 1;
-  font-weight: 500;
   padding: 0.625em 1.375em;
   margin-right: 0.5em;
+
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
 
   border: 2px solid var(--color-text);
   border-radius: 3px;
@@ -23,10 +25,10 @@
   }
 
   &:hover {
-    transform: translateY(-2px);
+    transform: translateY(-1px);
   }
 
   &:active {
-    transform: translateY(-1px);
+    transform: translateY(0px);
   }
 }

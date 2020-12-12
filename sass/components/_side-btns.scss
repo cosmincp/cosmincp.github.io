@@ -9,6 +9,10 @@ $height-right-side-btns: 5rem;
   display: flex;
   align-items: center;
 
+  @media (max-width: $bp-max-sm) {
+    display: none;
+  }
+
   &--left {
     left: 4vw;
 

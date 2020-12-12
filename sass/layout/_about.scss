@@ -3,25 +3,47 @@
     color: var(--color-text-calm);
     font-size: 1.125rem;
 
+    @media (max-width: $bp-max-lg) {
+      padding-bottom: 3rem;
+    }
+
     p {
       margin-bottom: 1.5em;
     }
   }
 }
 
-.zone-social {
+.social {
   padding-left: 0;
   padding-right: 6rem;
   position: relative;
 
+  @media (max-width: $bp-max-lg) {
+    padding-right: unset;
+  }
+
   &__avatar .wrap-1 {
-    background: linear-gradient(
-      90deg,
-      var(--color-lines) 0%,
-      var(--color-lines) 88%,
-      var(--color-bg) 92%,
-      var(--color-bg) 100%
-    );
+    max-width: 400px;
+    margin: 0 auto;
+
+    @media (min-width: $bp-min-xl) {
+      background: linear-gradient(
+        90deg,
+        var(--color-lines) 0%,
+        var(--color-lines) 88%,
+        var(--color-bg) 92%,
+        var(--color-bg) 100%
+      );
+    }
+    @media (max-width: $bp-max-lg) {
+      background: linear-gradient(
+        180deg,
+        var(--color-lines) 0%,
+        var(--color-lines) 88%,
+        var(--color-bg) 92%,
+        var(--color-bg) 100%
+      );
+    }
     padding: 1px;
     border-radius: 50%;
   }
@@ -45,22 +67,46 @@
     top: 50%;
     right: 0;
     transform: translateY(-50%);
+
     font-size: 1rem;
+
+    @media (max-width: $bp-max-lg) {
+      top: unset;
+      bottom: -2rem;
+      right: 50%;
+      transform: translateX(50%);
+
+      display: flex;
+      align-items: center;
+    }
 
     .link {
       transition: $transition-2;
 
-      &--0:hover,
-      &--1:hover {
-        transform: translateX(-0.25rem);
+      @media (max-width: $bp-max-lg) {
+        margin: 0 1rem;
       }
 
+      // translate for hovers
+      &:hover {
+        @media (min-width: $bp-min-xl) {
+          transform: translateX(-0.125rem);
+        }
+
+        @media (max-width: $bp-max-lg) {
+          transform: translateY(-0.125rem);
+        }
+      }
+
+      // margins for alignment
       &--0 {
-        margin-left: 0;
-      }
+        @media (min-width: $bp-min-xl) {
+          margin-left: 0.375em;
+        }
 
-      &--1 {
-        margin-left: -0.375em;
+        @media (max-width: $bp-max-lg) {
+          margin-top: 1em;
+        }
       }
     }
 
@@ -72,19 +118,24 @@
       padding: 0.75em 0;
     }
 
-    .icon {
-      margin-right: 1em;
+    .icon svg {
+      display: flex;
+      width: 1.5em;
+      fill: var(--color-text);
+
+      @media (max-width: $bp-max-lg) {
+        width: 1.75em;
+      }
     }
 
     .label {
       font-weight: 500;
       flex-grow: 1;
-    }
+      margin-left: 1em;
 
-    svg {
-      display: flex;
-      width: 1.5em;
-      fill: var(--color-text);
+      @media (max-width: $bp-max-lg) {
+        display: none;
+      }
     }
   }
 

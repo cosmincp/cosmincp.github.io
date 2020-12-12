@@ -1,0 +1,32 @@
+.skills {
+  &__container {
+    font-size: 1rem;
+
+    @media (max-width: $bp-max-md) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__list {
+    margin-left: 3rem;
+    position: relative;
+  }
+
+  &__item {
+    position: relative;
+    font-size: 1.075rem;
+    margin-bottom: 0.25rem;
+    padding-right: 1rem;
+  }
+
+  &__item::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -3rem;
+
+    width: 2rem;
+    height: 1px;
+    background: var(--color-silent-1);
+  }
+}

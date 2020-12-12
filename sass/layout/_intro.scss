@@ -21,6 +21,7 @@
   }
 
   &__greetings {
+    display: inline-block;
     margin: 2rem 0 3rem;
     position: relative;
     align-self: flex-start;
@@ -29,13 +30,16 @@
     font-size: 2.5rem;
     font-weight: 300;
 
-    // padding-right: 0.25rem;
+    @media (max-width: $bp-max-xs) {
+      font-size: 2rem;
+      margin: 1rem 0 3rem;
+    }
 
     &::after {
       content: "";
       position: absolute;
-      right: 0;
       top: 0;
+      right: 0;
       height: 100%;
       width: 100%;
       background: var(--color-bg); // change to default bg color
@@ -69,14 +73,40 @@
     line-height: 1;
     margin: 1.25rem 0;
     letter-spacing: 2px;
+
+    @media (max-width: $bp-max-xs) {
+      font-size: 3rem;
+    }
   }
 
   &__description {
     font-size: 1.375rem;
+
+    @media (max-width: $bp-max-xs) {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__description br {
+    @media (max-width: $bp-max-xs) {
+      display: none;
+    }
   }
 
   &__cta {
     margin: 3rem 0;
+
+    @media (max-width: $bp-max-xs) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn {
+      @media (max-width: $bp-max-xs) {
+        margin: 0 0.25rem;
+      }
+    }
   }
 
   &__hero {
@@ -85,12 +115,27 @@
     align-items: center;
     justify-content: center;
 
+    @media (min-width: $bp-min-lg) and (max-width: $bp-max-lg) {
+      justify-content: flex-end;
+    }
+
     .text {
-      margin-top: 6rem;
       font-size: 9rem;
       font-weight: 600;
       font-family: $font-mono-1;
       color: var(--color-stealth-2);
+
+      @media (min-width: $bp-min-lg) {
+        margin-top: 6rem;
+      }
+
+      @media (min-width: $bp-min-lg) and (max-width: $bp-max-lg) {
+        font-size: 8rem;
+      }
+
+      @media (max-width: $bp-max-xs) {
+        font-size: 25vw;
+      }
     }
 
     .brand img {
