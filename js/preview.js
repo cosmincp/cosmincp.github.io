@@ -205,6 +205,9 @@ function injectProjectSlides(code) {
 // Add "click" event listener to all projects previews
 
 for (i = 0; i < allProjectsPreviews.length; i++) {
+  let prjType = allProjectsPreviews[i].parentElement.getAttribute(
+    "data-prj-type"
+  )
   let prjCode = allProjectsPreviews[i].parentElement.getAttribute(
     "data-prj-code"
   )
@@ -213,11 +216,13 @@ for (i = 0; i < allProjectsPreviews.length; i++) {
     openProject(prjCode)
   })
 
-  allProjectsPreviews[i].parentElement
-    .querySelector(".project__details")
-    .addEventListener("click", () => {
-      openProject(prjCode)
-    })
+  if (prjType != "featured") {
+    allProjectsPreviews[i].parentElement
+      .querySelector(".project__details")
+      .addEventListener("click", () => {
+        openProject(prjCode)
+      })
+  }
 }
 
 // Inject clicked project's data into modal

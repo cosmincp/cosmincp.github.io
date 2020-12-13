@@ -4,12 +4,17 @@
   &__list {
     border-left: 1px solid var(--color-lines);
 
-    @media (min-width: $bp-min-lg) {
-      transform: translateY(1rem);
-    }
-
     @media (max-width: $bp-max-md) {
       margin-bottom: 3rem;
+    }
+
+    @media (max-width: $bp-max-xs) {
+      margin-top: 3rem;
+      margin-left: 0.5rem;
+    }
+
+    @media (min-width: $bp-min-lg) {
+      transform: translateY(1rem);
     }
   }
 
@@ -19,6 +24,11 @@
     margin-left: 2.5rem;
     margin-top: 2rem;
     transform: translateY(-11px);
+
+    @media (max-width: $bp-max-xs) {
+      margin-left: calc(calc(calc(1rem + 2px) / 2) * -1);
+      padding-left: 3rem;
+    }
   }
 
   &__item::before {
@@ -41,6 +51,11 @@
     width: calc(2.5rem + 1px);
     height: 1px;
     background: var(--color-lines);
+
+    @media (max-width: $bp-max-xs) {
+      content: unset;
+      display: none;
+    }
   }
 
   &__time {
@@ -59,6 +74,10 @@
     font-weight: 500;
     margin: 0.25rem 0;
     color: var(--color-strongest);
+
+    @media (max-width: $bp-max-xs) {
+      font-size: 1.125rem;
+    }
   }
 
   &__place {
@@ -66,10 +85,18 @@
     font-weight: 500;
     color: var(--color-text-tertiary);
     margin-bottom: 0.25rem;
+
+    @media (max-width: $bp-max-xs) {
+      font-size: 1rem;
+    }
   }
 
   &__details {
     font-weight: 300;
     font-style: italic;
+
+    @media (max-width: $bp-max-xs) {
+      font-size: 0.9rem;
+    }
   }
 }

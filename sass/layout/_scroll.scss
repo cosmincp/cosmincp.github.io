@@ -2,7 +2,6 @@ $scrollbar-width: 0.75rem;
 
 body,
 .op__overlay {
-  // Scrollbar
   &::-webkit-scrollbar-track,
   &::-webkit-scrollbar,
   &::-webkit-scrollbar-thumb {
@@ -26,7 +25,11 @@ body,
 body.no-scroll {
   overflow: hidden;
   height: 100vh;
-  padding-right: 0.75rem;
+  padding-right: $scrollbar-width;
+
+  @media (max-width: $bp-max-xs) {
+    padding-right: 0;
+  }
 
   &::-webkit-scrollbar-track,
   &::-webkit-scrollbar,
@@ -41,5 +44,15 @@ body.no-scroll .side-btns--right {
   &::before,
   &::after {
     right: #{$scrollbar-width};
+  }
+}
+
+.op__overlay {
+  @media (max-width: $bp-max-xs) {
+    &::-webkit-scrollbar-track,
+    &::-webkit-scrollbar,
+    &::-webkit-scrollbar-thumb {
+      display: none;
+    }
   }
 }

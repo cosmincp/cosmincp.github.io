@@ -15,6 +15,10 @@
   cursor: pointer;
   color: inherit;
 
+  @media (max-width: $bp-max-xs) {
+    padding: 0.75em 1.75em;
+  }
+
   &--outlined {
     background: transparent;
   }
