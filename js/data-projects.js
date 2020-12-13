@@ -97,9 +97,12 @@ const Projects = {
 
       thumbnail: "img/projects/thumbnails/xco-1000.jpg",
       gallery: [
-        "img/projects/xco/d01.jpg",
-        "img/projects/xco/d02.jpg",
+        // "img/projects/xco/d01.jpg",
+        // "img/projects/xco/d02.jpg",
+        "img/projects/xco/d04.jpg",
         "img/projects/xco/d03.jpg",
+        // "img/projects/xco/d05.jpg",
+        "img/projects/xco/d06.jpg",
       ],
     },
     {
