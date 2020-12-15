@@ -5,6 +5,14 @@
     @media (max-width: $bp-max-md) {
       margin-bottom: 4rem;
     }
+
+    @media (max-width: $bp-max-xs) {
+      margin-bottom: 2.5rem;
+    }
+
+    &--last {
+      margin-bottom: 0;
+    }
   }
 
   &__list {
@@ -28,5 +36,18 @@
     width: 2rem;
     height: 1px;
     background: var(--color-silent-1);
+  }
+}
+
+#s3 .zone__subtitle {
+  @media (max-width: $bp-max-xs) {
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+  }
+
+  br {
+    @media (max-width: $bp-max-xs) {
+      display: none;
+    }
   }
 }

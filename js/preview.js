@@ -78,6 +78,18 @@ function openProject(target) {
   setTimeout(function () {
     opSlider.querySelector(".slick-prev").click()
   }, 500)
+
+  // Slick btns prev/next
+
+  let slickBtnPrev = document.querySelector(".slick-prev")
+  let slickBtnNext = document.querySelector(".slick-next")
+
+  slickBtnPrev.addEventListener("click", () => {
+    slickInsertFullscreenBtnImgPath()
+  })
+  slickBtnNext.addEventListener("click", () => {
+    slickInsertFullscreenBtnImgPath()
+  })
 }
 
 function injectProject(code) {
@@ -225,7 +237,18 @@ for (i = 0; i < allProjectsPreviews.length; i++) {
   }
 }
 
-// Inject clicked project's data into modal
+/////////////////////////////////////////////////////
+/////////////////////////////////////////////////////
+// Update slick view full screen button A HREF
+
+function slickInsertFullscreenBtnImgPath() {
+  let btnUrl = document.querySelector("#js-slickViewCurrentSlideFull a")
+  let currentImgUrl = document
+    .querySelector(".slick-track .slick-current img")
+    .getAttribute("src")
+
+  btnUrl.setAttribute("href", currentImgUrl)
+}
 
 /////////////////////////////////////////////////////
 /////////////////////////////////////////////////////

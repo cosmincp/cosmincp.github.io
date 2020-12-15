@@ -240,20 +240,18 @@
 
 .slick-dots {
   position: absolute;
-  bottom: 0;
+  bottom: 1rem;
+  z-index: 1;
 
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 3rem 1rem 1rem;
-
-  background: linear-gradient(to bottom, transparent, hsla(0, 0%, 0%, 0.35));
 
   @media (max-width: $bp-max-xs) {
     padding: 0;
     background: none;
-    bottom: -2rem;
+    bottom: -2.5rem;
   }
 
   li {

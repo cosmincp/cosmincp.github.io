@@ -34,7 +34,8 @@
     backface-visibility: hidden;
 
     @media (max-width: $bp-max-xs) {
-      height: 33vh;
+      height: 55vw;
+      max-height: 30vh;
     }
   }
 
@@ -54,6 +55,11 @@
     font-size: 0.9rem;
     line-height: 1;
     font-family: $font-mono-1;
+
+    @media (max-width: $bp-max-xs) {
+      padding-bottom: 0.75rem;
+      font-weight: 400;
+    }
   }
 
   &__details {
@@ -96,6 +102,10 @@
   &__desc {
     margin: 1rem 0 2rem;
     color: var(--color-text-secondary);
+
+    @media (max-width: $bp-max-xs) {
+      margin: 1rem 0 1.5rem;
+    }
   }
 }
 
@@ -122,6 +132,10 @@ body.theme--bw-dark {
   &--featured {
     grid-template-columns: 1fr;
     grid-gap: 2rem;
+
+    @media (max-width: $bp-max-xs) {
+      grid-gap: 0rem;
+    }
   }
 
   &--others {
@@ -136,6 +150,18 @@ body.theme--bw-dark {
   &--featured,
   &--others {
     margin-bottom: 6rem;
+  }
+
+  &--featured {
+    @media (max-width: $bp-max-xs) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &--others {
+    @media (max-width: $bp-max-xs) {
+      margin-bottom: 4rem;
+    }
   }
 
   &--ux {

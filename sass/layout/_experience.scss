@@ -16,6 +16,12 @@
     @media (min-width: $bp-min-lg) {
       transform: translateY(1rem);
     }
+
+    &--last {
+      @media (max-width: $bp-max-xs) {
+        margin-bottom: 0;
+      }
+    }
   }
 
   &__item {
@@ -76,7 +82,7 @@
     color: var(--color-strongest);
 
     @media (max-width: $bp-max-xs) {
-      font-size: 1.125rem;
+      font-size: 1.25rem;
     }
   }
 
@@ -87,7 +93,7 @@
     margin-bottom: 0.25rem;
 
     @media (max-width: $bp-max-xs) {
-      font-size: 1rem;
+      font-size: 1.075rem;
     }
   }
 
