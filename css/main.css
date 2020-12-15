@@ -40,7 +40,7 @@
 }
 
 body.theme--bw-light {
-  --color-bg: var(--color-white);
+  --color-bg: var(--color-white) !important;
   --color-bg-2: var(--color-light-l1);
   --color-reverse: var(--color-dark-l1);
   --color-text: var(--color-dark);
@@ -64,7 +64,7 @@ body.theme--bw-light {
 }
 
 body.theme--bw-dark {
-  --color-bg: var(--color-dark-d1);
+  --color-bg: var(--color-dark-d1) !important;
   --color-bg-2: var(--color-dark-l1);
   --color-reverse: var(--color-bw);
   --color-strongest: var(--color-white);
@@ -196,6 +196,8 @@ body {
   font-size: 16px;
   line-height: 1.5;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
 }
 
 .zone {
