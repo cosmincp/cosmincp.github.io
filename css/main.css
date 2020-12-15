@@ -674,8 +674,8 @@ blockquote {
 
 .xp__place {
   font-size: 1.125rem;
-  font-weight: 500;
-  color: var(--color-text-tertiary);
+  font-weight: 300;
+  color: var(--color-strongest);
   margin-bottom: 0.25rem;
 }
 
@@ -1225,6 +1225,7 @@ blockquote {
   bottom: 0;
   width: 100%;
   padding: 3rem 0 1.5rem;
+  pointer-events: none;
   color: #ffffff;
   background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.5)));
   background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
@@ -1568,7 +1569,12 @@ body.no-scroll .side-btns--right::before, body.no-scroll .side-btns--right::afte
 
 @media (max-width: 575.98px) {
   .op__header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
     padding: 0.25rem 1rem;
+    background: var(--color-bg);
   }
 }
 

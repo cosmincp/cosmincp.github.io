@@ -88,8 +88,8 @@
 
   &__place {
     font-size: 1.125rem;
-    font-weight: 500;
-    color: var(--color-text-tertiary);
+    font-weight: 300;
+    color: var(--color-strongest);
     margin-bottom: 0.25rem;
 
     @media (max-width: $bp-max-xs) {

@@ -220,6 +220,7 @@ body.theme--bw-dark {
 
     width: 100%;
     padding: 3rem 0 1.5rem;
+    pointer-events: none;
 
     color: $color-white;
     background: linear-gradient(
