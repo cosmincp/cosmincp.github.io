@@ -45,14 +45,19 @@
       background: var(--color-bg); // change to default bg color
       border-left: 4px solid transparent;
 
-      animation: typing 1s steps(12) forwards, cursor 1s infinite; // steps(n), where 'n' is the number of monospaced characters
+      animation: typing 3s steps(12) forwards, cursor 1s infinite; // steps(n), where 'n' is the number of monospaced characters
     }
 
     @keyframes typing {
-      from {
+      0% {
         width: 100%;
       }
-      to {
+
+      40% {
+        width: 100%;
+      }
+
+      100% {
         width: 0;
       }
     }
