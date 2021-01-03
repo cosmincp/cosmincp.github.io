@@ -48,7 +48,16 @@ function openPreviewOverlay() {
   previewOverlay.classList.add("op__overlay--visible")
 }
 
-previewOverlay.addEventListener("mousedown", closeProject)
+previewOverlay.addEventListener("mousedown", (event) => {
+  let cursorPositionX = event.clientX
+  let currentWindowWidth = window.innerWidth
+  let scrollbarWidth = 12
+
+  // Close opened project only if user DID NOT click on the scrollbar
+  if (cursorPositionX < currentWindowWidth - scrollbarWidth) {
+    closeProject()
+  }
+})
 
 previewOverlay
   .querySelector(".op__window")
