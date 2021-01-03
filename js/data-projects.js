@@ -65,6 +65,7 @@ const Projects = {
         "img/projects/xmd/d02.jpg",
         "img/projects/xmd/d03.jpg",
         "img/projects/xmd/d04.jpg",
+        "img/projects/xmd/d05.jpg",
       ],
     },
   ],
