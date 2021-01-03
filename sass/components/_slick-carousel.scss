@@ -153,8 +153,11 @@
   line-height: 0;
 
   background: var(--color-bg);
+  color: var(--color-text);
   border: none;
   box-shadow: 0 0 1rem rgba($color-black, 0.3);
+
+  transition: $transition-1;
 
   @media (max-width: $bp-max-sm) {
     display: none;
@@ -166,15 +169,23 @@
     line-height: 1;
 
     opacity: 0.75;
-    color: white;
+    color: inherit;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
+  &:hover {
+    background: var(--color-bg-2);
+    transform: translate(0, calc(-2px - 50%));
+  }
+
+  &:active {
+    transform: translate(0, calc(0px - 50%));
+  }
+
   &:hover,
   &:focus {
-    color: transparent;
     outline: none;
   }
 

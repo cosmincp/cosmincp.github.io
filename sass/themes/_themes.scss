@@ -70,6 +70,7 @@ body.theme--bw-light {
   --color-stealth-3: var(--color-stealth-d3);
 
   --color-lines: var(--color-light);
+  --color-lines-l1: var(--color-light-l1);
 }
 
 body.theme--bw-dark {
@@ -99,4 +100,5 @@ body.theme--bw-dark {
   --color-stealth-3: var(--color-stealth-l3);
 
   --color-lines: var(--color-dark-l3);
+  --color-lines-l1: var(--color-dark-l5);
 }

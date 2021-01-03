@@ -61,6 +61,7 @@ body.theme--bw-light {
   --color-stealth-2: var(--color-stealth-d2);
   --color-stealth-3: var(--color-stealth-d3);
   --color-lines: var(--color-light);
+  --color-lines-l1: var(--color-light-l1);
 }
 
 body.theme--bw-dark {
@@ -85,6 +86,7 @@ body.theme--bw-dark {
   --color-stealth-2: var(--color-stealth-l2);
   --color-stealth-3: var(--color-stealth-l3);
   --color-lines: var(--color-dark-l3);
+  --color-lines-l1: var(--color-dark-l5);
 }
 
 @media (max-width: 575.98px) {
@@ -1535,6 +1537,12 @@ body.no-scroll .side-btns--right::before, body.no-scroll .side-btns--right::afte
   transition: 0.5s;
 }
 
+@media (min-width: 1450px) {
+  .op__window {
+    max-width: 1200px;
+  }
+}
+
 @media (max-width: 991.98px) {
   .op__window {
     max-width: 85vw;
@@ -1966,6 +1974,12 @@ body.no-scroll .side-btns--right::before, body.no-scroll .side-btns--right::afte
   background: var(--color-lines);
   color: var(--color-text);
   cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.op__btn:hover {
+  background: var(--color-lines-l1);
 }
 
 .op__btn .label {
@@ -2346,9 +2360,12 @@ body.no-scroll .side-btns--right::before, body.no-scroll .side-btns--right::afte
   font-size: 0;
   line-height: 0;
   background: var(--color-bg);
+  color: var(--color-text);
   border: none;
   -webkit-box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
           box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
 }
 
 @media (max-width: 767.98px) {
@@ -2364,15 +2381,27 @@ body.no-scroll .side-btns--right::before, body.no-scroll .side-btns--right::afte
   font-size: 20px;
   line-height: 1;
   opacity: 0.75;
-  color: white;
+  color: inherit;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  background: var(--color-bg-2);
+  -webkit-transform: translate(0, calc(-2px - 50%));
+          transform: translate(0, calc(-2px - 50%));
+}
+
+.slick-prev:active,
+.slick-next:active {
+  -webkit-transform: translate(0, calc(0px - 50%));
+          transform: translate(0, calc(0px - 50%));
 }
 
 .slick-prev:hover, .slick-prev:focus,
 .slick-next:hover,
 .slick-next:focus {
-  color: transparent;
   outline: none;
 }
 

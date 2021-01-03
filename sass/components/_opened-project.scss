@@ -33,6 +33,10 @@
     // opacity: 0;
     transition: $transition-5;
 
+    @media (min-width: 1450px) {
+      max-width: 1200px;
+    }
+
     @media (max-width: $bp-max-md) {
       max-width: 85vw;
     }
@@ -376,6 +380,12 @@
     background: var(--color-lines);
     color: var(--color-text);
     cursor: pointer;
+
+    transition: $transition-2;
+
+    &:hover {
+      background: var(--color-lines-l1);
+    }
   }
 
   &__btn .label {
