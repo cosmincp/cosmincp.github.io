@@ -974,8 +974,8 @@ blockquote {
 }
 
 .project__img img, .project__tags, .project__title, .project__date {
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.375s;
+  transition: 0.375s;
 }
 
 .project__img {
@@ -993,8 +993,6 @@ blockquote {
   height: 18rem;
   width: 100%;
   border: 1px solid var(--color-lines);
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
 }
 
 @media (max-width: 575.98px) {
@@ -1007,6 +1005,10 @@ blockquote {
 .project:hover .project__img img {
   -webkit-filter: grayscale(0) contrast(1) brightness(0.99);
           filter: grayscale(0) contrast(1) brightness(0.99);
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+  -webkit-backface-visibility: unset;
+          backface-visibility: unset;
 }
 
 .project__tags {
@@ -1209,6 +1211,7 @@ blockquote {
 .projects--others .project,
 .projects--ux .project {
   overflow: hidden;
+  border: 1px solid var(--color-lines);
 }
 
 @media (min-width: 576px) {
@@ -1225,6 +1228,11 @@ blockquote {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 100%;
           flex: 0 0 100%;
+}
+
+.projects--others .project__img img,
+.projects--ux .project__img img {
+  border: none;
 }
 
 .projects--others .project__details,

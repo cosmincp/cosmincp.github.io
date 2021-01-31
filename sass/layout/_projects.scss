@@ -12,7 +12,7 @@
   &__tags,
   &__title,
   &__date {
-    transition: $transition-5;
+    transition: $transition-4;
   }
 
   &__img {
@@ -31,7 +31,7 @@
 
     border: 1px solid var(--color-lines);
 
-    backface-visibility: hidden;
+    // backface-visibility: hidden;
 
     @media (max-width: $bp-max-xs) {
       height: 55vw;
@@ -41,6 +41,8 @@
 
   &:hover &__img img {
     filter: grayscale(0) contrast(1) brightness(0.99);
+    transform: scale(1.01);
+    backface-visibility: unset;
   }
 
   &__tags {
@@ -201,6 +203,7 @@ body.theme--bw-dark {
 .projects--others .project,
 .projects--ux .project {
   overflow: hidden;
+  border: 1px solid var(--color-lines);
 
   &--widowed {
     @media (min-width: $bp-min-sm) {
@@ -212,6 +215,10 @@ body.theme--bw-dark {
 
   &__img {
     flex: 0 0 100%;
+  }
+
+  &__img img {
+    border: none;
   }
 
   &__details {
