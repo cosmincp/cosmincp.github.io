@@ -17,6 +17,11 @@
     p {
       margin-bottom: 1.5em;
     }
+
+    .fw-b,
+    .fw-i {
+      color: var(--color-text-primary);
+    }
   }
 }
 
@@ -171,6 +176,7 @@
       font-weight: 500;
       flex-grow: 1;
       margin-left: 1em;
+      color: var(--color-text-secondary);
 
       @media (max-width: $bp-max-lg) {
         display: none;
