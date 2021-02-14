@@ -374,6 +374,11 @@ blockquote {
   margin-bottom: 1.5em;
 }
 
+.zone-about .about-me .fw-b,
+.zone-about .about-me .fw-i {
+  color: var(--color-text-primary);
+}
+
 .social {
   padding-left: 0;
   padding-right: 6rem;
@@ -566,6 +571,7 @@ blockquote {
       -ms-flex-positive: 1;
           flex-grow: 1;
   margin-left: 1em;
+  color: var(--color-text-secondary);
 }
 
 @media (max-width: 1199.98px) {
@@ -1871,7 +1877,7 @@ body.no-scroll .side-btns--right::before, body.no-scroll .side-btns--right::afte
 }
 
 .skills__list {
-  margin-left: 3rem;
+  margin-left: 2rem;
   position: relative;
 }
 
@@ -1886,8 +1892,8 @@ body.no-scroll .side-btns--right::before, body.no-scroll .side-btns--right::afte
   content: "";
   position: absolute;
   top: 50%;
-  left: -3rem;
-  width: 2rem;
+  left: -2rem;
+  width: 1rem;
   height: 1px;
   background: var(--color-silent-1);
 }
