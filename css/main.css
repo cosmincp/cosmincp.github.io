@@ -347,6 +347,12 @@ blockquote {
   margin-bottom: 1em;
 }
 
+.zone-about .row {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .zone-about .about-me {
   color: var(--color-text-calm);
   font-size: 1.125rem;
@@ -381,7 +387,7 @@ blockquote {
 
 .social {
   padding-left: 0;
-  padding-right: 6rem;
+  padding-right: 5rem;
   position: relative;
 }
 
@@ -426,8 +432,15 @@ blockquote {
 
 .social__avatar .wrap-2 {
   border-radius: 50%;
-  padding: 2.5rem;
+  padding: 3rem;
   background: var(--color-bg);
+  cursor: default;
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .social__avatar .wrap-2 {
+    padding: 2rem;
+  }
 }
 
 @media (max-width: 575.98px) {
@@ -968,7 +981,7 @@ blockquote {
 
 @media (max-width: 575.98px) {
   .zone-intro__cta .btn {
-    margin: 0 0.25rem;
+    margin: 0.25rem 0.25rem 0.25rem 0;
   }
 }
 
@@ -1913,7 +1926,7 @@ body.no-scroll .side-btns--right::before, body.no-scroll .side-btns--right::afte
 
 .btn {
   display: inline-block;
-  padding: 0.625em 1.375em;
+  padding: 0.75em 1.5em;
   margin-right: 0.5em;
   font-size: 1.125rem;
   font-weight: 500;
