@@ -14,6 +14,10 @@
   --color-bw-l1: hsl(0, 0%, 55%);
   --color-bw: hsl(0, 0%, 50%);
   --color-bw-d1: hsl(0, 0%, 45%);
+  --color-bw-d2: hsl(0, 0%, 43%);
+  --color-bw-d3: hsl(0, 0%, 41%);
+  --color-bw-d4: hsl(0, 0%, 39%);
+  --color-bw-d5: hsl(0, 0%, 37%);
   --color-dark-l5: hsl(0, 0%, 35%);
   --color-dark-l4: hsl(0, 0%, 32%);
   --color-dark-l3: hsl(0, 0%, 29%);
@@ -23,6 +27,7 @@
   --color-dark-d1: hsl(0, 0%, 18%);
   --color-dark-d2: hsl(0, 0%, 16%);
   --color-dark-d3: hsl(0, 0%, 14%);
+  --color-dark-d4: hsl(0, 0%, 13%);
   --color-black: hsl(0, 0%, 0%);
   --color-discrete-l1: hsla(0, 0%, 100%, 0.25);
   --color-silent-l1: hsla(0, 0%, 100%, 0.2);
@@ -62,6 +67,10 @@ body.theme--bw-light {
   --color-stealth-3: var(--color-stealth-d3);
   --color-lines: var(--color-light);
   --color-lines-l1: var(--color-light-l1);
+  --color-logo-lines-intro: var(--color-light-d2);
+  --color-logo-lines-permanent: var(--color-light-l2);
+  --color-logo-shape-outline: var(--color-dark-l2);
+  --color-logo-shape-bg: var(--color-dark-l3);
 }
 
 body.theme--bw-dark {
@@ -87,6 +96,10 @@ body.theme--bw-dark {
   --color-stealth-3: var(--color-stealth-l3);
   --color-lines: var(--color-dark-l3);
   --color-lines-l1: var(--color-dark-l5);
+  --color-logo-lines-intro: var(--color-bw-d2);
+  --color-logo-lines-permanent: var(--color-dark-d4);
+  --color-logo-shape-outline: var(--color-light);
+  --color-logo-shape-bg: var(--color-light-d3);
 }
 
 @media (max-width: 575.98px) {
@@ -847,6 +860,11 @@ blockquote {
   }
 }
 
+.zone-intro__my, .zone-intro__name, .zone-intro__description, .zone-intro__cta {
+  position: relative;
+  z-index: 10;
+}
+
 .zone-intro__my {
   font-size: 1.25rem;
 }
@@ -866,6 +884,8 @@ blockquote {
 }
 
 .zone-intro__description {
+  position: relative;
+  z-index: 10;
   font-size: 1.375rem;
 }
 
@@ -886,26 +906,14 @@ blockquote {
 }
 
 @media (max-width: 575.98px) {
-  .zone-intro__cta {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-}
-
-@media (max-width: 575.98px) {
   .zone-intro__cta .btn {
     margin: 0 0.25rem;
   }
 }
 
 .zone-intro__hero {
+  position: relative;
+  z-index: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -923,6 +931,12 @@ blockquote {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .zone-intro__hero {
+    overflow: hidden;
   }
 }
 
@@ -957,6 +971,362 @@ blockquote {
   margin-top: 8rem;
   margin-right: 4rem;
   opacity: 0.2;
+}
+
+.zone-intro__hero .logo-animation {
+  width: 720px;
+  position: absolute;
+  top: 2.25rem;
+  left: -14rem;
+  z-index: -1;
+}
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .zone-intro__hero .logo-animation {
+    width: 650px;
+    top: 3.25rem;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .zone-intro__hero .logo-animation {
+    position: relative;
+    top: unset;
+    left: unset;
+    margin: -7rem -5rem -13rem;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .zone-intro__hero .logo-animation {
+    margin: -7rem auto -13rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .zone-intro__hero .logo-animation {
+    margin: -7rem -5rem -5rem;
+  }
+}
+
+.zone-intro__hero .logo-animation .wrap {
+  position: relative;
+  z-index: 100;
+  margin: 2rem auto;
+  width: 100%;
+}
+
+.zone-intro__hero .logo-animation .wrap .fader::before, .zone-intro__hero .logo-animation .wrap .fader::after {
+  content: "";
+  position: absolute;
+}
+
+.zone-intro__hero .logo-animation .wrap .fader-vertical::before, .zone-intro__hero .logo-animation .wrap .fader-vertical::after {
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 35%;
+}
+
+.zone-intro__hero .logo-animation .wrap .fader-vertical::before {
+  top: 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(6rem, var(--color-bg)), color-stop(6rem, var(--color-bg)), to(transparent));
+  background-image: linear-gradient(to bottom, var(--color-bg) 6rem, var(--color-bg) 6rem, transparent);
+}
+
+.zone-intro__hero .logo-animation .wrap .fader-vertical::after {
+  bottom: 0;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(6rem, var(--color-bg)), color-stop(6rem, var(--color-bg)), to(transparent));
+  background-image: linear-gradient(to top, var(--color-bg) 6rem, var(--color-bg) 6rem, transparent);
+}
+
+.zone-intro__hero .logo-animation .wrap .fader-horizontal::before, .zone-intro__hero .logo-animation .wrap .fader-horizontal::after {
+  top: 0;
+  height: 100%;
+  width: 33%;
+}
+
+.zone-intro__hero .logo-animation .wrap .fader-horizontal::before {
+  left: 0;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(5rem, var(--color-bg)), color-stop(5rem, var(--color-bg)), to(transparent));
+  background-image: linear-gradient(to right, var(--color-bg) 5rem, var(--color-bg) 5rem, transparent);
+}
+
+.zone-intro__hero .logo-animation .wrap .fader-horizontal::after {
+  right: 0;
+  background-image: -webkit-gradient(linear, right top, left top, color-stop(5rem, var(--color-bg)), color-stop(5rem, var(--color-bg)), to(transparent));
+  background-image: linear-gradient(to left, var(--color-bg) 5rem, var(--color-bg) 5rem, transparent);
+}
+
+.zone-intro__hero .logo-animation svg {
+  display: block;
+  width: 100%;
+}
+
+.zone-intro__hero .logo-animation svg .logo {
+  fill: transparent;
+  stroke: transparent;
+  stroke-width: 2px;
+  -webkit-animation: animation-c 10s ease-in-out calc(3s + 3s) forwards;
+          animation: animation-c 10s ease-in-out calc(3s + 3s) forwards;
+}
+
+.zone-intro__hero .logo-animation svg .logo-c {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+}
+
+.zone-intro__hero .logo-animation svg .logo-cp {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+
+@-webkit-keyframes animation-c {
+  0% {
+    fill: transparent;
+    stroke: transparent;
+  }
+  5% {
+    stroke: transparent;
+  }
+  10% {
+    stroke: var(--color-logo-shape-outline);
+  }
+  50% {
+    fill: transparent;
+  }
+  75% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    fill: var(--color-logo-shape-bg);
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes animation-c {
+  0% {
+    fill: transparent;
+    stroke: transparent;
+  }
+  5% {
+    stroke: transparent;
+  }
+  10% {
+    stroke: var(--color-logo-shape-outline);
+  }
+  50% {
+    fill: transparent;
+  }
+  75% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    fill: var(--color-logo-shape-bg);
+    stroke-dashoffset: 0;
+  }
+}
+
+.zone-intro__hero .logo-animation svg .h,
+.zone-intro__hero .logo-animation svg .tlbr,
+.zone-intro__hero .logo-animation svg .bltr {
+  stroke: transparent;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+}
+
+.zone-intro__hero .logo-animation svg .h-1 {
+  -webkit-animation: animation-h 20s cubic-bezier(0.26, 0.76, 0.61, 0.93) calc(3s + calc(0.2s * 1)) forwards;
+          animation: animation-h 20s cubic-bezier(0.26, 0.76, 0.61, 0.93) calc(3s + calc(0.2s * 1)) forwards;
+}
+
+.zone-intro__hero .logo-animation svg .h-2 {
+  -webkit-animation: animation-h 20s cubic-bezier(0.26, 0.76, 0.61, 0.93) calc(3s + calc(0.2s * 2)) forwards;
+          animation: animation-h 20s cubic-bezier(0.26, 0.76, 0.61, 0.93) calc(3s + calc(0.2s * 2)) forwards;
+}
+
+.zone-intro__hero .logo-animation svg .h-3 {
+  -webkit-animation: animation-h 20s cubic-bezier(0.26, 0.76, 0.61, 0.93) calc(3s + calc(0.2s * 3)) forwards;
+          animation: animation-h 20s cubic-bezier(0.26, 0.76, 0.61, 0.93) calc(3s + calc(0.2s * 3)) forwards;
+}
+
+.zone-intro__hero .logo-animation svg .h-4 {
+  -webkit-animation: animation-h 20s cubic-bezier(0.26, 0.76, 0.61, 0.93) calc(3s + calc(0.2s * 4)) forwards;
+          animation: animation-h 20s cubic-bezier(0.26, 0.76, 0.61, 0.93) calc(3s + calc(0.2s * 4)) forwards;
+}
+
+.zone-intro__hero .logo-animation svg .tlbr-1 {
+  -webkit-animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(0.2s * 1) forwards;
+          animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(0.2s * 1) forwards;
+  -webkit-animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(3s + calc(0.2s * 1)) forwards;
+          animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(3s + calc(0.2s * 1)) forwards;
+}
+
+.zone-intro__hero .logo-animation svg .tlbr-2 {
+  -webkit-animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(0.2s * 2) forwards;
+          animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(0.2s * 2) forwards;
+  -webkit-animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(3s + calc(0.2s * 2)) forwards;
+          animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(3s + calc(0.2s * 2)) forwards;
+}
+
+.zone-intro__hero .logo-animation svg .tlbr-3 {
+  -webkit-animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(0.2s * 3) forwards;
+          animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(0.2s * 3) forwards;
+  -webkit-animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(3s + calc(0.2s * 3)) forwards;
+          animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(3s + calc(0.2s * 3)) forwards;
+}
+
+.zone-intro__hero .logo-animation svg .tlbr-4 {
+  -webkit-animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(0.2s * 4) forwards;
+          animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(0.2s * 4) forwards;
+  -webkit-animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(3s + calc(0.2s * 4)) forwards;
+          animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(3s + calc(0.2s * 4)) forwards;
+}
+
+.zone-intro__hero .logo-animation svg .tlbr-5 {
+  -webkit-animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(0.2s * 5) forwards;
+          animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(0.2s * 5) forwards;
+  -webkit-animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(3s + calc(0.2s * 5)) forwards;
+          animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(3s + calc(0.2s * 5)) forwards;
+}
+
+.zone-intro__hero .logo-animation svg .tlbr-6 {
+  -webkit-animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(0.2s * 6) forwards;
+          animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(0.2s * 6) forwards;
+  -webkit-animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(3s + calc(0.2s * 6)) forwards;
+          animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(3s + calc(0.2s * 6)) forwards;
+}
+
+.zone-intro__hero .logo-animation svg .bltr-1 {
+  -webkit-animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(0.2s * 1) forwards;
+          animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(0.2s * 1) forwards;
+  -webkit-animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(3s + calc(0.2s * 1)) forwards;
+          animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(3s + calc(0.2s * 1)) forwards;
+}
+
+.zone-intro__hero .logo-animation svg .bltr-2 {
+  -webkit-animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(0.2s * 2) forwards;
+          animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(0.2s * 2) forwards;
+  -webkit-animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(3s + calc(0.2s * 2)) forwards;
+          animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(3s + calc(0.2s * 2)) forwards;
+}
+
+.zone-intro__hero .logo-animation svg .bltr-3 {
+  -webkit-animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(0.2s * 3) forwards;
+          animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(0.2s * 3) forwards;
+  -webkit-animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(3s + calc(0.2s * 3)) forwards;
+          animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(3s + calc(0.2s * 3)) forwards;
+}
+
+.zone-intro__hero .logo-animation svg .bltr-4 {
+  -webkit-animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(0.2s * 4) forwards;
+          animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(0.2s * 4) forwards;
+  -webkit-animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(3s + calc(0.2s * 4)) forwards;
+          animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(3s + calc(0.2s * 4)) forwards;
+}
+
+.zone-intro__hero .logo-animation svg .bltr-5 {
+  -webkit-animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(0.2s * 5) forwards;
+          animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(0.2s * 5) forwards;
+  -webkit-animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(3s + calc(0.2s * 5)) forwards;
+          animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(3s + calc(0.2s * 5)) forwards;
+}
+
+.zone-intro__hero .logo-animation svg .bltr-6 {
+  -webkit-animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(0.2s * 6) forwards;
+          animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(0.2s * 6) forwards;
+  -webkit-animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(3s + calc(0.2s * 6)) forwards;
+          animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(3s + calc(0.2s * 6)) forwards;
+}
+
+.zone-intro__hero .logo-animation svg .bltr-7 {
+  -webkit-animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(0.2s * 7) forwards;
+          animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(0.2s * 7) forwards;
+  -webkit-animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(3s + calc(0.2s * 7)) forwards;
+          animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(3s + calc(0.2s * 7)) forwards;
+}
+
+.zone-intro__hero .logo-animation svg .bltr-8 {
+  -webkit-animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(0.2s * 8) forwards;
+          animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(0.2s * 8) forwards;
+  -webkit-animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(3s + calc(0.2s * 8)) forwards;
+          animation: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85) calc(3s + calc(0.2s * 8)) forwards;
+}
+
+@-webkit-keyframes animation-h {
+  0% {
+    stroke-dashoffset: 1000;
+    stroke: transparent;
+  }
+  5% {
+    stroke: var(--color-logo-lines-intro);
+  }
+  30% {
+    stroke-dashoffset: 0;
+  }
+  60% {
+    stroke: var(--color-logo-lines-intro);
+  }
+  100% {
+    stroke: var(--color-logo-lines-permanent);
+  }
+}
+
+@keyframes animation-h {
+  0% {
+    stroke-dashoffset: 1000;
+    stroke: transparent;
+  }
+  5% {
+    stroke: var(--color-logo-lines-intro);
+  }
+  30% {
+    stroke-dashoffset: 0;
+  }
+  60% {
+    stroke: var(--color-logo-lines-intro);
+  }
+  100% {
+    stroke: var(--color-logo-lines-permanent);
+  }
+}
+
+@-webkit-keyframes animation-xlxr {
+  0% {
+    stroke-dashoffset: 1000;
+    stroke: transparent;
+  }
+  5% {
+    stroke: var(--color-logo-lines-intro);
+  }
+  30% {
+    stroke-dashoffset: 0;
+  }
+  60% {
+    stroke: var(--color-logo-lines-intro);
+  }
+  100% {
+    stroke: var(--color-logo-lines-permanent);
+  }
+}
+
+@keyframes animation-xlxr {
+  0% {
+    stroke-dashoffset: 1000;
+    stroke: transparent;
+  }
+  5% {
+    stroke: var(--color-logo-lines-intro);
+  }
+  30% {
+    stroke-dashoffset: 0;
+  }
+  60% {
+    stroke: var(--color-logo-lines-intro);
+  }
+  100% {
+    stroke: var(--color-logo-lines-permanent);
+  }
 }
 
 .project {

@@ -14,6 +14,10 @@
   --color-bw-l1: hsl(0, 0%, 55%);
   --color-bw: hsl(0, 0%, 50%);
   --color-bw-d1: hsl(0, 0%, 45%);
+  --color-bw-d2: hsl(0, 0%, 43%);
+  --color-bw-d3: hsl(0, 0%, 41%);
+  --color-bw-d4: hsl(0, 0%, 39%);
+  --color-bw-d5: hsl(0, 0%, 37%);
 
   --color-dark-l5: hsl(0, 0%, 35%);
   --color-dark-l4: hsl(0, 0%, 32%);
@@ -24,6 +28,7 @@
   --color-dark-d1: hsl(0, 0%, 18%);
   --color-dark-d2: hsl(0, 0%, 16%);
   --color-dark-d3: hsl(0, 0%, 14%);
+  --color-dark-d4: hsl(0, 0%, 13%);
   --color-black: hsl(0, 0%, 0%);
 
   // B/W Transparent
@@ -71,6 +76,11 @@ body.theme--bw-light {
 
   --color-lines: var(--color-light);
   --color-lines-l1: var(--color-light-l1);
+
+  --color-logo-lines-intro: var(--color-light-d2);
+  --color-logo-lines-permanent: var(--color-light-l2);
+  --color-logo-shape-outline: var(--color-dark-l2);
+  --color-logo-shape-bg: var(--color-dark-l3);
 }
 
 body.theme--bw-dark {
@@ -101,4 +111,9 @@ body.theme--bw-dark {
 
   --color-lines: var(--color-dark-l3);
   --color-lines-l1: var(--color-dark-l5);
+
+  --color-logo-lines-intro: var(--color-bw-d2);
+  --color-logo-lines-permanent: var(--color-dark-d4);
+  --color-logo-shape-outline: var(--color-light);
+  --color-logo-shape-bg: var(--color-light-d3);
 }

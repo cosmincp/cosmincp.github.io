@@ -69,6 +69,14 @@
     }
   }
 
+  &__my,
+  &__name,
+  &__description,
+  &__cta {
+    position: relative;
+    z-index: 10;
+  }
+
   &__my {
     font-size: 1.25rem;
   }
@@ -86,6 +94,8 @@
   }
 
   &__description {
+    position: relative;
+    z-index: 10;
     font-size: 1.375rem;
 
     @media (max-width: $bp-max-xs) {
@@ -102,12 +112,6 @@
   &__cta {
     margin: 3rem 0;
 
-    @media (max-width: $bp-max-xs) {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
     .btn {
       @media (max-width: $bp-max-xs) {
         margin: 0 0.25rem;
@@ -116,6 +120,9 @@
   }
 
   &__hero {
+    position: relative;
+    z-index: 0;
+
     display: flex;
     height: 100%;
     align-items: center;
@@ -123,6 +130,10 @@
 
     @media (min-width: $bp-min-lg) and (max-width: $bp-max-lg) {
       justify-content: flex-end;
+    }
+
+    @media (max-width: $bp-max-md) {
+      overflow: hidden;
     }
 
     .text {
@@ -150,6 +161,266 @@
       margin-top: 8rem;
       margin-right: 4rem;
       opacity: 0.2;
+    }
+
+    .logo-animation {
+      width: 720px;
+      position: absolute;
+      top: 2.25rem;
+      left: -14rem;
+      z-index: -1;
+
+      @media (min-width: 1200px) and (max-width: 1399.98px) {
+        width: 650px;
+        top: 3.25rem;
+      }
+
+      @media (max-width: $bp-max-lg) {
+        position: relative;
+        top: unset;
+        left: unset;
+        margin: -7rem -5rem -13rem;
+      }
+
+      @media (min-width: $bp-min-lg) and (max-width: $bp-max-lg) {
+        margin: -7rem auto -13rem;
+      }
+
+      @media (max-width: $bp-max-xs) {
+        margin: -7rem -5rem -5rem;
+      }
+
+      $logo-bg: var(--color-bg);
+      $logo-color-body: var(--color-logo-shape-bg);
+      $logo-color-lines-intro: var(--color-logo-lines-intro);
+      $logo-color-lines-permanent: var(--color-logo-lines-permanent);
+      $size-faders-opaque-x: 5rem;
+      $size-faders-opaque-y: 6rem;
+
+      .wrap {
+        position: relative;
+        z-index: 100;
+        margin: 2rem auto;
+        width: 100%;
+
+        .fader {
+          &::before,
+          &::after {
+            content: "";
+            position: absolute;
+          }
+        }
+
+        .fader-vertical {
+          &::before,
+          &::after {
+            left: 0;
+            z-index: 100;
+            width: 100%;
+            height: 35%;
+          }
+
+          &::before {
+            top: 0;
+            background-image: linear-gradient(
+              to bottom,
+              $logo-bg $size-faders-opaque-y,
+              $logo-bg $size-faders-opaque-y,
+              transparent
+            );
+          }
+
+          &::after {
+            bottom: 0;
+            background-image: linear-gradient(
+              to top,
+              $logo-bg $size-faders-opaque-y,
+              $logo-bg $size-faders-opaque-y,
+              transparent
+            );
+          }
+        }
+
+        .fader-horizontal {
+          &::before,
+          &::after {
+            top: 0;
+            height: 100%;
+            width: 33%;
+          }
+
+          &::before {
+            left: 0;
+            background-image: linear-gradient(
+              to right,
+              $logo-bg $size-faders-opaque-x,
+              $logo-bg $size-faders-opaque-x,
+              transparent
+            );
+          }
+
+          &::after {
+            right: 0;
+            background-image: linear-gradient(
+              to left,
+              $logo-bg $size-faders-opaque-x,
+              $logo-bg $size-faders-opaque-x,
+              transparent
+            );
+          }
+        }
+      }
+
+      svg {
+        display: block;
+        width: 100%;
+
+        // general delay until whole svg starts
+        $svg-appearance-delay: 3s;
+
+        // logo - Cs
+
+        .logo {
+          fill: transparent;
+          stroke: transparent;
+          stroke-width: 2px;
+
+          animation: animation-c 10s ease-in-out
+            calc(#{$svg-appearance-delay} + 3s) forwards;
+        }
+
+        .logo-c {
+          stroke-dasharray: 500;
+          stroke-dashoffset: 500;
+        }
+
+        .logo-cp {
+          stroke-dasharray: 1000;
+          stroke-dashoffset: 1000;
+        }
+
+        @keyframes animation-c {
+          0% {
+            fill: transparent;
+            stroke: transparent;
+          }
+
+          5% {
+            stroke: transparent;
+          }
+
+          10% {
+            stroke: var(--color-logo-shape-outline);
+          }
+
+          50% {
+            fill: transparent;
+          }
+
+          75% {
+            stroke-dashoffset: 0;
+          }
+
+          100% {
+            fill: $logo-color-body;
+            stroke-dashoffset: 0;
+          }
+        }
+
+        // horizontal & diagonal - animations
+
+        .h,
+        .tlbr,
+        .bltr {
+          stroke: transparent;
+          stroke-dasharray: 1000;
+          stroke-dashoffset: 0;
+        }
+
+        $h-anim: animation-h 20s cubic-bezier(0.26, 0.76, 0.61, 0.93);
+        $h-delay: 0.2s;
+        $h-classes: (1, 2, 3, 4);
+
+        @each $number in $h-classes {
+          .h-#{$number} {
+            animation: $h-anim
+              calc(#{$svg-appearance-delay} + calc(#{$h-delay} * #{$number}))
+              forwards;
+          }
+        }
+
+        $tlbr-anim: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85);
+        $tlbr-delay: 0.2s;
+        $tlbr-classes: (1, 2, 3, 4, 5, 6);
+
+        @each $number in $tlbr-classes {
+          .tlbr-#{$number} {
+            animation: $tlbr-anim calc(#{$tlbr-delay} * #{$number}) forwards;
+            animation: $tlbr-anim
+              calc(#{$svg-appearance-delay} + calc(#{$tlbr-delay} * #{$number}))
+              forwards;
+          }
+        }
+
+        $bltr-anim: animation-xlxr 20s cubic-bezier(0.23, 1.21, 0.53, 0.85);
+        $bltr-delay: 0.2s;
+        $bltr-classes: (1, 2, 3, 4, 5, 6, 7, 8);
+
+        @each $number in $bltr-classes {
+          .bltr-#{$number} {
+            animation: $bltr-anim calc(#{$bltr-delay} * #{$number}) forwards;
+            animation: $bltr-anim
+              calc(#{$svg-appearance-delay} + calc(#{$bltr-delay} * #{$number}))
+              forwards;
+          }
+        }
+
+        @keyframes animation-h {
+          0% {
+            stroke-dashoffset: 1000;
+            stroke: transparent;
+          }
+
+          5% {
+            stroke: $logo-color-lines-intro;
+          }
+
+          30% {
+            stroke-dashoffset: 0;
+          }
+
+          60% {
+            stroke: $logo-color-lines-intro;
+          }
+
+          100% {
+            stroke: $logo-color-lines-permanent;
+          }
+        }
+
+        @keyframes animation-xlxr {
+          0% {
+            stroke-dashoffset: 1000;
+            stroke: transparent;
+          }
+
+          5% {
+            stroke: $logo-color-lines-intro;
+          }
+
+          30% {
+            stroke-dashoffset: 0;
+          }
+
+          60% {
+            stroke: $logo-color-lines-intro;
+          }
+
+          100% {
+            stroke: $logo-color-lines-permanent;
+          }
+        }
+      }
     }
   }
 }
