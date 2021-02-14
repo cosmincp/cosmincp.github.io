@@ -9,6 +9,8 @@
 
     @media (max-width: $bp-max-xs) {
       padding-bottom: 1rem;
+    }
+    @media (max-width: 380px) {
       font-size: 1.075rem;
     }
 
@@ -35,8 +37,8 @@
       background: linear-gradient(
         90deg,
         var(--color-lines) 0%,
-        var(--color-lines) 88%,
-        var(--color-bg) 92%,
+        var(--color-lines) 78%,
+        var(--color-bg) 82%,
         var(--color-bg) 100%
       );
     }
@@ -44,11 +46,18 @@
       background: linear-gradient(
         180deg,
         var(--color-lines) 0%,
-        var(--color-lines) 88%,
-        var(--color-bg) 92%,
+        var(--color-lines) 78%,
+        var(--color-bg) 82%,
         var(--color-bg) 100%
       );
     }
+    @media (max-width: $bp-max-xs) {
+      max-width: 300px;
+    }
+    @media (max-width: 375px) {
+      max-width: 250px;
+    }
+
     padding: 1px;
     border-radius: 50%;
   }
@@ -57,6 +66,13 @@
     border-radius: 50%;
     padding: 2.5rem;
     background: var(--color-bg);
+
+    @media (max-width: $bp-max-xs) {
+      padding: 2rem;
+    }
+    @media (max-width: 375px) {
+      padding: 1.75rem;
+    }
   }
 
   &__avatar img {
@@ -70,7 +86,7 @@
   &__links {
     position: absolute;
     top: 50%;
-    right: 0;
+    right: -0.5rem;
     transform: translateY(-50%);
 
     font-size: 1rem;
@@ -91,6 +107,14 @@
       @media (max-width: $bp-max-lg) {
         margin: 0 1rem;
       }
+      @media (max-width: $bp-max-xs) {
+        font-size: 0.875rem;
+        margin: 0 0.75rem;
+      }
+      @media (max-width: 375px) {
+        font-size: 0.75rem;
+        margin: 0 0.625rem;
+      }
 
       // translate for hovers
       &:hover {
@@ -104,13 +128,23 @@
       }
 
       // margins for alignment
-      &--0 {
+      &--1 {
         @media (min-width: $bp-min-xl) {
-          margin-left: 0.375em;
+          margin-left: -0.5em;
         }
 
         @media (max-width: $bp-max-lg) {
-          margin-top: 1em;
+          margin-top: -1em;
+        }
+      }
+
+      &--2 {
+        @media (min-width: $bp-min-xl) {
+          margin-left: -1.75em;
+        }
+
+        @media (max-width: $bp-max-lg) {
+          margin-top: -4em;
         }
       }
     }

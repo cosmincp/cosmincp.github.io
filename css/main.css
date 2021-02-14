@@ -361,6 +361,11 @@ blockquote {
 @media (max-width: 575.98px) {
   .zone-about .about-me {
     padding-bottom: 1rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .zone-about .about-me {
     font-size: 1.075rem;
   }
 }
@@ -390,15 +395,27 @@ blockquote {
 
 @media (min-width: 1200px) {
   .social__avatar .wrap-1 {
-    background: -webkit-gradient(linear, left top, right top, from(var(--color-lines)), color-stop(88%, var(--color-lines)), color-stop(92%, var(--color-bg)), to(var(--color-bg)));
-    background: linear-gradient(90deg, var(--color-lines) 0%, var(--color-lines) 88%, var(--color-bg) 92%, var(--color-bg) 100%);
+    background: -webkit-gradient(linear, left top, right top, from(var(--color-lines)), color-stop(78%, var(--color-lines)), color-stop(82%, var(--color-bg)), to(var(--color-bg)));
+    background: linear-gradient(90deg, var(--color-lines) 0%, var(--color-lines) 78%, var(--color-bg) 82%, var(--color-bg) 100%);
   }
 }
 
 @media (max-width: 1199.98px) {
   .social__avatar .wrap-1 {
-    background: -webkit-gradient(linear, left top, left bottom, from(var(--color-lines)), color-stop(88%, var(--color-lines)), color-stop(92%, var(--color-bg)), to(var(--color-bg)));
-    background: linear-gradient(180deg, var(--color-lines) 0%, var(--color-lines) 88%, var(--color-bg) 92%, var(--color-bg) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, from(var(--color-lines)), color-stop(78%, var(--color-lines)), color-stop(82%, var(--color-bg)), to(var(--color-bg)));
+    background: linear-gradient(180deg, var(--color-lines) 0%, var(--color-lines) 78%, var(--color-bg) 82%, var(--color-bg) 100%);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .social__avatar .wrap-1 {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 375px) {
+  .social__avatar .wrap-1 {
+    max-width: 250px;
   }
 }
 
@@ -406,6 +423,18 @@ blockquote {
   border-radius: 50%;
   padding: 2.5rem;
   background: var(--color-bg);
+}
+
+@media (max-width: 575.98px) {
+  .social__avatar .wrap-2 {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .social__avatar .wrap-2 {
+    padding: 1.75rem;
+  }
 }
 
 .social__avatar img {
@@ -421,7 +450,7 @@ blockquote {
 .social__links {
   position: absolute;
   top: 50%;
-  right: 0;
+  right: -0.5rem;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   font-size: 1rem;
@@ -454,6 +483,20 @@ blockquote {
   }
 }
 
+@media (max-width: 575.98px) {
+  .social__links .link {
+    font-size: 0.875rem;
+    margin: 0 0.75rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .social__links .link {
+    font-size: 0.75rem;
+    margin: 0 0.625rem;
+  }
+}
+
 @media (min-width: 1200px) {
   .social__links .link:hover {
     -webkit-transform: translateX(-0.125rem);
@@ -469,14 +512,26 @@ blockquote {
 }
 
 @media (min-width: 1200px) {
-  .social__links .link--0 {
-    margin-left: 0.375em;
+  .social__links .link--1 {
+    margin-left: -0.5em;
   }
 }
 
 @media (max-width: 1199.98px) {
-  .social__links .link--0 {
-    margin-top: 1em;
+  .social__links .link--1 {
+    margin-top: -1em;
+  }
+}
+
+@media (min-width: 1200px) {
+  .social__links .link--2 {
+    margin-left: -1.75em;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .social__links .link--2 {
+    margin-top: -4em;
   }
 }
 
