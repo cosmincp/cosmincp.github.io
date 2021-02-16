@@ -716,7 +716,7 @@ blockquote {
   top: 2.075rem;
   height: 1rem;
   width: 1rem;
-  background: var(--color-text);
+  background: var(--color-lines);
   border-radius: 50%;
 }
 
@@ -941,6 +941,7 @@ blockquote {
 
 .zone-intro__my {
   font-size: 1.25rem;
+  color: var(--color-text-calm);
 }
 
 .zone-intro__name {
@@ -961,6 +962,7 @@ blockquote {
   position: relative;
   z-index: 10;
   font-size: 1.375rem;
+  color: var(--color-text-calm);
 }
 
 @media (max-width: 575.98px) {
@@ -1051,7 +1053,7 @@ blockquote {
   width: 720px;
   position: absolute;
   top: 2.25rem;
-  left: -14rem;
+  left: -17rem;
   z-index: -1;
 }
 
@@ -1073,7 +1075,13 @@ blockquote {
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
   .zone-intro__hero .logo-animation {
-    margin: -7rem auto -13rem;
+    margin: -10rem auto -16rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .zone-intro__hero .logo-animation {
+    margin: -7rem -5rem -5rem;
   }
 }
 
@@ -1104,14 +1112,28 @@ blockquote {
 
 .zone-intro__hero .logo-animation .wrap .fader-vertical::before {
   top: 0;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(6rem, var(--color-bg)), color-stop(6rem, var(--color-bg)), to(transparent));
-  background-image: linear-gradient(to bottom, var(--color-bg) 6rem, var(--color-bg) 6rem, transparent);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(10rem, var(--color-bg)), to(transparent));
+  background-image: linear-gradient(to bottom, var(--color-bg) 10rem, transparent);
+}
+
+@media (max-width: 991.98px) {
+  .zone-intro__hero .logo-animation .wrap .fader-vertical::before {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(var(--color-bg)), to(transparent));
+    background-image: linear-gradient(to bottom, var(--color-bg) calc(10rem - 4rem), transparent);
+  }
 }
 
 .zone-intro__hero .logo-animation .wrap .fader-vertical::after {
   bottom: 0;
-  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(6rem, var(--color-bg)), color-stop(6rem, var(--color-bg)), to(transparent));
-  background-image: linear-gradient(to top, var(--color-bg) 6rem, var(--color-bg) 6rem, transparent);
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(10rem, var(--color-bg)), to(transparent));
+  background-image: linear-gradient(to top, var(--color-bg) 10rem, transparent);
+}
+
+@media (max-width: 991.98px) {
+  .zone-intro__hero .logo-animation .wrap .fader-vertical::after {
+    background-image: -webkit-gradient(linear, left bottom, left top, from(var(--color-bg)), to(transparent));
+    background-image: linear-gradient(to top, var(--color-bg) calc(10rem - 4rem), transparent);
+  }
 }
 
 .zone-intro__hero .logo-animation .wrap .fader-horizontal::before, .zone-intro__hero .logo-animation .wrap .fader-horizontal::after {
@@ -1122,14 +1144,42 @@ blockquote {
 
 .zone-intro__hero .logo-animation .wrap .fader-horizontal::before {
   left: 0;
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(5rem, var(--color-bg)), color-stop(5rem, var(--color-bg)), to(transparent));
-  background-image: linear-gradient(to right, var(--color-bg) 5rem, var(--color-bg) 5rem, transparent);
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(8rem, var(--color-bg)), to(transparent));
+  background-image: linear-gradient(to right, var(--color-bg) 8rem, transparent);
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .zone-intro__hero .logo-animation .wrap .fader-horizontal::before {
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--color-bg)), to(transparent));
+    background-image: linear-gradient(to right, var(--color-bg), transparent);
+  }
+}
+
+@media (max-width: 991.98px) {
+  .zone-intro__hero .logo-animation .wrap .fader-horizontal::before {
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--color-bg)), to(transparent));
+    background-image: linear-gradient(to right, var(--color-bg) calc(8rem - 4rem), transparent);
+  }
 }
 
 .zone-intro__hero .logo-animation .wrap .fader-horizontal::after {
   right: 0;
-  background-image: -webkit-gradient(linear, right top, left top, color-stop(5rem, var(--color-bg)), color-stop(5rem, var(--color-bg)), to(transparent));
-  background-image: linear-gradient(to left, var(--color-bg) 5rem, var(--color-bg) 5rem, transparent);
+  background-image: -webkit-gradient(linear, right top, left top, color-stop(8rem, var(--color-bg)), to(transparent));
+  background-image: linear-gradient(to left, var(--color-bg) 8rem, transparent);
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .zone-intro__hero .logo-animation .wrap .fader-horizontal::after {
+    background-image: -webkit-gradient(linear, right top, left top, from(var(--color-bg)), to(transparent));
+    background-image: linear-gradient(to left, var(--color-bg), transparent);
+  }
+}
+
+@media (max-width: 991.98px) {
+  .zone-intro__hero .logo-animation .wrap .fader-horizontal::after {
+    background-image: -webkit-gradient(linear, right top, left top, from(var(--color-bg)), to(transparent));
+    background-image: linear-gradient(to left, var(--color-bg) calc(8rem - 4rem), transparent);
+  }
 }
 
 .zone-intro__hero .logo-animation svg {
@@ -1141,8 +1191,8 @@ blockquote {
   fill: transparent;
   stroke: transparent;
   stroke-width: 2px;
-  -webkit-animation: animation-c 10s ease-in-out calc(3s + 3s) forwards;
-          animation: animation-c 10s ease-in-out calc(3s + 3s) forwards;
+  -webkit-animation: animation-c 10s ease-in-out calc(3s + 2.5s) forwards;
+          animation: animation-c 10s ease-in-out calc(3s + 2.5s) forwards;
 }
 
 .zone-intro__hero .logo-animation svg .logo-c {
@@ -1640,6 +1690,7 @@ blockquote {
 .projects--featured .project__img {
   -ms-flex-item-align: start;
       align-self: flex-start;
+  overflow: unset;
 }
 
 .projects--featured .project__details {
@@ -1862,6 +1913,12 @@ body.no-scroll .side-btns--right::before, body.no-scroll .side-btns--right::afte
   #s4,
   #s5 {
     padding: 3rem 0;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  #s1 {
+    padding-top: 1rem;
   }
 }
 
@@ -2451,7 +2508,7 @@ body.no-scroll .side-btns--right::before, body.no-scroll .side-btns--right::afte
 
 .side-btns {
   position: fixed;
-  z-index: 1;
+  z-index: 20;
   top: 0;
   height: 100%;
   display: -webkit-box;
@@ -2987,6 +3044,12 @@ body.no-scroll .side-btns--right::before, body.no-scroll .side-btns--right::afte
   height: 1.25rem;
   background: var(--color-white);
   border-radius: 50%;
+}
+
+@media (max-width: 575.98px) {
+  .slick-dots li button:before {
+    background: var(--color-bw);
+  }
 }
 
 .slick-dots li.slick-active button:before {
