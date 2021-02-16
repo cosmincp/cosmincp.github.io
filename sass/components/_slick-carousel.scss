@@ -301,6 +301,10 @@
     height: 1.25rem;
     background: var(--color-white);
     border-radius: 50%;
+
+    @media (max-width: $bp-max-xs) {
+      background: var(--color-bw);
+    }
   }
 
   li.slick-active button:before {

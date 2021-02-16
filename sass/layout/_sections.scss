@@ -18,6 +18,12 @@
   }
 }
 
+#s1 {
+  @media (min-width: $bp-min-sm) and (max-width: $bp-max-md) {
+    padding-top: 1rem;
+  }
+}
+
 #s5 {
   padding-bottom: 7rem;
 }
