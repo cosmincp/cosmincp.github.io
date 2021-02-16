@@ -79,6 +79,7 @@
 
   &__my {
     font-size: 1.25rem;
+    color: var(--color-text-calm);
   }
 
   &__name {
@@ -97,6 +98,7 @@
     position: relative;
     z-index: 10;
     font-size: 1.375rem;
+    color: var(--color-text-calm);
 
     @media (max-width: $bp-max-xs) {
       font-size: 1.125rem;
@@ -167,7 +169,7 @@
       width: 720px;
       position: absolute;
       top: 2.25rem;
-      left: -14rem;
+      left: -17rem;
       z-index: -1;
 
       @media (min-width: 1200px) and (max-width: 1399.98px) {
@@ -183,7 +185,11 @@
       }
 
       @media (min-width: $bp-min-lg) and (max-width: $bp-max-lg) {
-        margin: -7rem auto -13rem;
+        margin: -10rem auto -16rem;
+      }
+
+      @media (min-width: $bp-min-sm) and (max-width: $bp-max-md) {
+        margin: -7rem -5rem -5rem;
       }
 
       @media (max-width: $bp-max-xs) {
@@ -194,8 +200,9 @@
       $logo-color-body: var(--color-logo-shape-bg);
       $logo-color-lines-intro: var(--color-logo-lines-intro);
       $logo-color-lines-permanent: var(--color-logo-lines-permanent);
-      $size-faders-opaque-x: 5rem;
-      $size-faders-opaque-y: 6rem;
+      $size-faders-opaque-x: 8rem;
+      $size-faders-opaque-y: 10rem;
+      $size-faders-opaque-lessen: 4rem;
 
       .wrap {
         position: relative;
@@ -225,9 +232,17 @@
             background-image: linear-gradient(
               to bottom,
               $logo-bg $size-faders-opaque-y,
-              $logo-bg $size-faders-opaque-y,
               transparent
             );
+
+            @media (max-width: $bp-max-md) {
+              background-image: linear-gradient(
+                to bottom,
+                $logo-bg
+                  calc(#{$size-faders-opaque-y} - #{$size-faders-opaque-lessen}),
+                transparent
+              );
+            }
           }
 
           &::after {
@@ -235,9 +250,17 @@
             background-image: linear-gradient(
               to top,
               $logo-bg $size-faders-opaque-y,
-              $logo-bg $size-faders-opaque-y,
               transparent
             );
+
+            @media (max-width: $bp-max-md) {
+              background-image: linear-gradient(
+                to top,
+                $logo-bg
+                  calc(#{$size-faders-opaque-y} - #{$size-faders-opaque-lessen}),
+                transparent
+              );
+            }
           }
         }
 
@@ -254,9 +277,25 @@
             background-image: linear-gradient(
               to right,
               $logo-bg $size-faders-opaque-x,
-              $logo-bg $size-faders-opaque-x,
               transparent
             );
+
+            @media (min-width: $bp-min-lg) and (max-width: $bp-max-lg) {
+              background-image: linear-gradient(
+                to right,
+                $logo-bg,
+                transparent
+              );
+            }
+
+            @media (max-width: $bp-max-md) {
+              background-image: linear-gradient(
+                to right,
+                $logo-bg
+                  calc(#{$size-faders-opaque-x} - #{$size-faders-opaque-lessen}),
+                transparent
+              );
+            }
           }
 
           &::after {
@@ -264,9 +303,21 @@
             background-image: linear-gradient(
               to left,
               $logo-bg $size-faders-opaque-x,
-              $logo-bg $size-faders-opaque-x,
               transparent
             );
+
+            @media (min-width: $bp-min-lg) and (max-width: $bp-max-lg) {
+              background-image: linear-gradient(to left, $logo-bg, transparent);
+            }
+
+            @media (max-width: $bp-max-md) {
+              background-image: linear-gradient(
+                to left,
+                $logo-bg
+                  calc(#{$size-faders-opaque-x} - #{$size-faders-opaque-lessen}),
+                transparent
+              );
+            }
           }
         }
       }
@@ -286,7 +337,7 @@
           stroke-width: 2px;
 
           animation: animation-c 10s ease-in-out
-            calc(#{$svg-appearance-delay} + 3s) forwards;
+            calc(#{$svg-appearance-delay} + 2.5s) forwards;
         }
 
         .logo-c {
